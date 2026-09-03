@@ -1,0 +1,19 @@
+# Database
+backend/app/app.db
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+venv/
+env/
+
+# Environment/secrets
+.env
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+.vscode/
