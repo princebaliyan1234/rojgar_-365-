@@ -1,46 +1,44 @@
 import json
 from pathlib import Path
 
-from database import engine
+from database import engine, init_db
 from sqlalchemy.orm import Session
 from models import Union, User, WorkerProfile, WorkerPhoto, LocalityPriceBand, Booking, Review
 
+# Make sure tables actually exist before we try to insert anything
+init_db()
 
+# seed.json lives one folder up, inside seed_data/
 BASE_DIR = Path(__file__).resolve().parent
-DB_PATH = BASE_DIR / "app.db"
+SEED_FILE = BASE_DIR.parent / "seed_data" / "seed.json"
 
-
-
-with open(BASE_DIR / "seed.json", "r", encoding="utf-8") as f:
+with open(SEED_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
-
 
 with Session(engine) as session:
 
     for item in data["unions"]:
-        union = Union(
+        session.merge(Union(
             id=item["id"],
             name=item["name"],
             level=item["level"],
             parent_union_id=item.get("parent_union_id")
-        )
-
-        session.merge(union)
+        ))
 
     for item in data["users"]:
-        user = User(
+        session.merge(User(
             id=item["id"],
             phone=item["phone"],
             name=item["name"],
             role=item["role"],
-            locality=item["locality"]
-        )
-
-        session.merge(user)
-    from models import WorkerProfile
+            locality=item["locality"],
+            latitude=item.get("latitude"),
+            longitude=item.get("longitude"),
+            photo_url=item.get("photo_url")
+        ))
 
     for item in data["worker_profiles"]:
-        wp = WorkerProfile(
+        session.merge(WorkerProfile(
             id=item["id"],
             user_id=item["user_id"],
             trade=item["trade"],
@@ -49,31 +47,27 @@ with Session(engine) as session:
             price=item.get("price"),
             kyc_status=item.get("kyc_status", "pending"),
             rating_avg=item.get("rating_avg", 0.0)
-        )
-        session.merge(wp)
+        ))
 
-    from models import WorkerPhoto, LocalityPriceBand, Booking, Review
     for item in data["worker_photos"]:
-        wp = WorkerPhoto(
+        session.merge(WorkerPhoto(
             id=item["id"],
             worker_id=item["worker_id"],
             url=item["url"],
             position=item["position"]
-        )
-        session.merge(wp)
+        ))
 
     for item in data["price_bands"]:
-        pb = LocalityPriceBand(
+        session.merge(LocalityPriceBand(
             id=item["id"],
             union_id=item["union_id"],
             trade=item["trade"],
             floor=item["floor"],
             ceiling=item["ceiling"]
-        )
-        session.merge(pb)
+        ))
 
     for item in data["bookings"]:
-        b = Booking(
+        session.merge(Booking(
             id=item["id"],
             customer_id=item["customer_id"],
             worker_id=item["worker_id"],
@@ -81,19 +75,16 @@ with Session(engine) as session:
             status=item["status"],
             payment_model=item["payment_model"],
             total_days=item["total_days"]
-        )
-        session.merge(b)
+        ))
 
     for item in data["reviews"]:
-        r = Review(
+        session.merge(Review(
             id=item["id"],
             booking_id=item["booking_id"],
             rating=item["rating"],
             review_text=item["review_text"]
-        )
-        session.merge(r)
+        ))
+
     session.commit()
 
-
 print("Seed data inserted successfully!")
-
