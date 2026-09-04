@@ -1,9 +1,9 @@
 import json
 from pathlib import Path
 
-from database import engine, init_db
+from app.database import engine, init_db
 from sqlalchemy.orm import Session
-from models import Union, User, WorkerProfile, WorkerPhoto, LocalityPriceBand, Booking, Review
+from app.models import Union, User, WorkerProfile, WorkerPhoto, LocalityPriceBand, Booking, Review
 
 # Make sure tables actually exist before we try to insert anything
 init_db()
