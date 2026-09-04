@@ -25,7 +25,7 @@ def send_otp(phone: str):
     db.commit()
     db.close()
 
-    return {"message": "OTP sent", "otp": otp}
+    return {"message": "OTP sent", "otp": otp}          #For now its only for demo we haven't added any sms gateway.
 
 
 @router.post("/verify-otp")
