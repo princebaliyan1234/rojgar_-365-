@@ -1,5 +1,5 @@
 from fastapi import HTTPException
-from app.schemas.booking import BookingResponse
+from app.schemas.booking_schema import BookingResponse
 from app.database import SessionLocal
 from app.models import Booking
 from fastapi import APIRouter
