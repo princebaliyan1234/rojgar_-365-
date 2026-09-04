@@ -3,12 +3,14 @@ from datetime import datetime, timedelta
 import random
 from app.database import SessionLocal
 from app.models import OtpCode
+from app.models import User
+from fastapi import HTTPException
 
 router = APIRouter()
 
 @router.post("/send-otp")
 def send_otp(phone: str):
-    otp = str(random.randint(1000, 999999))
+    otp = str(random.randint(100000, 999999))
     expiry = datetime.utcnow() + timedelta(minutes=5)
 
     db = SessionLocal()
@@ -25,6 +27,7 @@ def send_otp(phone: str):
 
     return {"message": "OTP sent", "otp": otp}
 
+
 @router.post("/verify-otp")
 def verify_otp(phone: str, code: str):
     db = SessionLocal()
@@ -36,13 +39,20 @@ def verify_otp(phone: str, code: str):
 
     if not otp_entry:
         db.close()
-        return {"success": False, "message": "Invalid OTP"}
+        raise HTTPException(status_code=404, detail="Invalid OTP")
 
     if otp_entry.expires_at < datetime.utcnow():
         db.close()
-        return {"success": False, "message": "OTP expired"}
+        raise HTTPException(status_code=400, detail="OTP expired")
 
     otp_entry.verified = True
     db.commit()
+
+    user = db.query(User).filter(User.phone == phone).first()
     db.close()
-    return {"success": True, "message": "OTP verified"}
+
+    return {
+        "verified": True,
+        "user_exists": user is not None,
+        "user_id": user.id if user else None
+    }
