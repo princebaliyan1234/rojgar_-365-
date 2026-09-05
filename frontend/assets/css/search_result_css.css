@@ -3,6 +3,7 @@ div {
   padding: 15px;
   margin: 10px 0;
   border-radius: 8px;
+  
 }
 
 button {
@@ -24,7 +25,33 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  
 }
 #resultsContainer > div {
-  width: 220px;
+  min-width: 220px;
+}
+
+.name-and-kyc{
+    display: flex;
+    gap: 10px;
+}
+
+.name-and-kyc span {
+  display: inline-flex;
+  height: 40px;
+  align-items: center;
+  border: 2px solid rgb(142, 253, 142);
+  background-color: rgb(189, 255, 189);
+  border-radius: 999px;
+  padding: 0px 10px 0px 10px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.worker-name{
+  white-space: nowrap;
+}
+
+.worker-card{
+  border: 2px solid rgb(252, 211, 134);
 }

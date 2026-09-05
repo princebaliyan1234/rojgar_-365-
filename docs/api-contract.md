@@ -54,9 +54,9 @@ Notes: kyc_status always starts "pending". 404 if user_id or union_id doesn't ex
 
 ### Search workers
 Method + Path: GET /search
-Request: none (query params: trade string, locality string, lat float optional, lon float optional, proximity bool optional)
-Response: [ { "id": int, "name": string, "trade": string, "locality": string, "price": float, "rating_avg": float, "photo_urls": [string], "distance_km": float (only if proximity=true) } ]
-Notes: photo_urls = top 3 worker_photos ordered by position. 200 with [] if no matches. 400 if proximity=true without lat/lon.
+Request: none (query params: trade string, locality string, lat float optional, lon float optional, proximity float optional — km radius, NOT a boolean as originally written)
+Response: [ { "id": int, "name": string, "trade": string, "locality": string, "price": float, "rating_avg": float, "review_count": int, "photo_urls": [string], "latitude": float, "longitude": float, "distance_km": float | null } ]
+Notes: trade/locality matching is case-insensitive substring (ilike), not exact match. rating_avg always returned even when 0.0 (no reviews yet); review_count added alongside it. When lat/lon are given, results are sorted nearest-first by real geopy distance. When proximity is also given: if any worker falls within that radius, only those are returned; if none do, returns exactly ONE result — the single nearest worker overall, with their real distance_km attached — instead of an empty list, so the frontend can show "nothing nearby, here's the closest match" rather than a dead end. photo_urls = worker's worker_photos ordered by position. 200 with [] only when no trade/locality match exists at all (not for the proximity-fallback case, which always returns 1). 400 if proximity is given without lat/lon.
 
 ### Get worker profile
 Method + Path: GET /workers/{worker_id}
@@ -88,13 +88,13 @@ Notes: pass exactly one query param depending on viewer. 200 with [] if none.
 Method + Path: GET /bookings/{booking_id}/checkout
 Request: none (path param only)
 Response: { "base_price": float, "commission": float, "remote_fee": float, "total": float }
-Notes: computed from worker's price + business-logic percentages. 404 if booking not found.
+Notes: for standard gigs (payment_model = daily/milestone), base_price is worker_profile.price (one standard 8-hour working day's flat rate) — for multi-day bookings, the full total scales by total_days BEFORE commission/remote_fee are applied, then the displayed total here represents the FULL multi-day job, not a single day. For custom_offer bookings, base_price is the manually agreed booking.price as-is, no per-day scaling. 404 if booking not found.
 
 ### Confirm payment (creates day_records + held payments)
 Method + Path: POST /bookings/{booking_id}/checkout
 Request: { "confirm": true }
 Response: [ { "day_record_id": int, "day_number": int, "payment_status": "held", "amount": float } ]
-Notes: creates one day_records row per day (1..total_days, status "pending") + one linked payments row each (status "held"). This is the escrow simulation — no external API.
+Notes: creates one day_records row per day (1..total_days, status "pending") + one linked payments row each (status "held"). Each day's payment.amount = the full multi-day total (with commission + remote_fee) divided evenly across total_days — NOT a single day's flat rate alone. 400 if checkout was already confirmed for this booking (one-time only, no re-confirm). This is the escrow simulation — no external API.
 
 ### Check-in (start of work-day)
 Method + Path: POST /day-records/{day_record_id}/checkin
@@ -103,10 +103,10 @@ Response: { "day_record_id": int, "start_time": string, "status": "in_progress" 
 Notes: geopy.distance.geodesic against customer's stored lat/lon; if distance <= 500m, sets start_time. 400 if distance > 500m.
 
 ### Check-out (end of work-day → wage + release)
-Method + Path: POST /day-records/{day_record_id}/checkout
-Request: { "worker_lat": float, "worker_lon": float }
+Method + Path: POST /day-records/{day_record_id}/checkout/confirm
+Request: { "code": string, "worker_lat": float, "worker_lon": float }
 Response: { "day_record_id": int, "end_time": string, "wage_amount": float, "payment_status": "released", "status": "completed" }
-Notes: same distance check. On success: sets end_time, computes wage_amount = hours_worked × rate, flips matching payments.status to "released".
+Notes: OTP + one-time GPS distance check (<=500m), both required. On success: sets end_time, computes wage_amount via the flat-rate model (custom_offer → booking.price as-is; standard gig → worker_profile.price, same flat amount per completed day, NO hours-based multiplication), and flips the matching payments.status to "released". IMPORTANT: payment.amount is NOT overwritten at release — it stays as the original customer-facing held total (commission + remote_fee included). wage_amount is the separate worker-facing payout figure. Platform's commission earned on a given day = payment.amount - day_record.wage_amount, computed by whoever needs it (not stored anywhere directly).
 
 ### Get single day record
 Method + Path: GET /day-records/{day_record_id}
