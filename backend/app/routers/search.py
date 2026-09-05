@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from geopy.distance import geodesic
 
 from app.database import get_db
-from app.models import User, WorkerProfile, WorkerPhoto
+from app.models import User, WorkerProfile, WorkerPhoto, Booking, Review
 
 from app.schemas.search_schema import SearchResult
 
@@ -36,6 +36,14 @@ def search(
         )
         return [p.url for p in photos]
 
+    def get_review_count(user_id: int) -> int:
+        return (
+            db.query(Review)
+            .join(Booking, Review.booking_id == Booking.id)
+            .filter(Booking.worker_id == user_id)
+            .count()
+        )
+
     def build_result(user, profile, distance_km=None):
         return SearchResult(
             id=user.id,
@@ -44,6 +52,7 @@ def search(
             locality=user.locality,
             price=profile.price,
             rating_avg=profile.rating_avg,
+            review_count=get_review_count(user.id),
             photo_urls=get_photo_urls(user.id),
             latitude=user.latitude,
             longitude=user.longitude,
@@ -54,21 +63,33 @@ def search(
     if lat is None or lon is None:
         return [build_result(user, profile) for user, profile in rows]
 
+
+
     origin = (lat, lon)
-    results = []
+    all_with_distance = []
 
     for user, profile in rows:
         if user.latitude is None or user.longitude is None:
-            continue  # skip anyone with no location data instead of crashing
+            continue
 
         worker_point = (user.latitude, user.longitude)
         distance = geodesic(origin, worker_point).km
+        all_with_distance.append((user, profile, round(distance, 2)))
 
-        if proximity is not None and distance > proximity:
-            continue  # outside requested radius
+    all_with_distance.sort(key=lambda r: r[2])
 
-        results.append(build_result(user, profile, round(distance, 2)))
+    if proximity is not None:
+        within_radius = [r for r in all_with_distance if r[2] <= proximity]
+        if within_radius:
+            return [build_result(u, p, d) for u, p, d in within_radius]
+        elif all_with_distance:
+            nearest_user, nearest_profile, nearest_distance = all_with_distance[0]
+            return [build_result(nearest_user, nearest_profile, nearest_distance)]
+        else:
+            return []
 
-    results.sort(key=lambda r: (r.distance_km is None, r.distance_km))
+    return [build_result(u, p, d) for u, p, d in all_with_distance]
 
-    return results
+
+
+    
