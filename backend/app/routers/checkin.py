@@ -3,7 +3,8 @@ from datetime import datetime, timedelta
 import random
 from geopy.distance import geodesic
 from app.database import SessionLocal
-from app.models import Booking, DayRecord, User, OtpCode
+from app.models import Booking, DayRecord, User, OtpCode, Payment, WorkerProfile
+from app.services.wage_calc import calculate_wage
 
 router = APIRouter()
 
@@ -147,12 +148,32 @@ def checkout_confirm(day_record_id: int, code: str, worker_lat: float, worker_lo
     otp_entry.verified = True
     day_record.end_time = datetime.utcnow()
     day_record.status = "completed"
+
+    booking = db.query(Booking).filter(Booking.id == day_record.booking_id).first()
+    profile = db.query(WorkerProfile).filter(WorkerProfile.user_id == booking.worker_id).first()
+
+    if profile is None:
+        db.close()
+        raise HTTPException(status_code=400, detail="Worker profile not found")
+
+    day_record.wage_amount = calculate_wage(booking, profile)
+
+    payment = db.query(Payment).filter(Payment.day_record_id == day_record_id).first()
+    if payment:
+        payment.status = "released"
+        # payment.amount stays as-is — it's the customer-facing total 
+        # (base + commission + remote fee), separate from wage_amount 
+        # (the worker's payout). Platform commission = payment.amount - day_record.wage_amount.
+
     db.commit()
+
     result = {
-    "day_record_id": day_record_id,
-    "end_time": day_record.end_time,   # ✅ sahi
-    "status": day_record.status
-}
+        "day_record_id": day_record_id,
+        "end_time": day_record.end_time,
+        "wage_amount": day_record.wage_amount,
+        "payment_status": payment.status if payment else None,
+        "status": day_record.status,
+    }
     db.close()
 
     return result
