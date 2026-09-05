@@ -10,6 +10,12 @@ engine = create_engine(f"sqlite:///{DB_PATH}", echo=True)
 Base = declarative_base()
 SessionLocal = sessionmaker(bind=engine)
 
+def get_db():
+    database_session = SessionLocal()
+    try:
+        yield database_session
+    finally:
+        database_session.close()
 
 def init_db():
     Base.metadata.create_all(engine)
