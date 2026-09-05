@@ -4,6 +4,7 @@ from app.routers import auth
 from app.routers import booking
 from app.routers import checkin
 from app.routers import search
+from app.routers import checkout
 
 app = FastAPI()
 
@@ -18,6 +19,7 @@ app.include_router(booking.router)
 app.include_router(auth.router)
 app.include_router(checkin.router)
 app.include_router(search.search_route)
+app.include_router(checkout.checkout_route)
 
 
 @app.get("/health")

@@ -45,6 +45,7 @@ function renderWorkers(list, requestedProximity = null) {
     card.querySelector(".rating-value").textContent = w.rating_avg;
     card.querySelector(".rating-count").textContent = w.review_count > 0 ? `(${w.review_count})` : "";
     card.querySelector(".price-value").textContent = `₹${w.price}`;
+    card.querySelector(".worker-verified-badge").textContent = w.kyc_status === "approved" ? "✓ Cooperative Verified" : "";
 
     const bookBtn = card.querySelector(".book-now-btn");
     bookBtn.addEventListener("click", () => alert(`Booking ${w.name} - ₹${w.price}`));
