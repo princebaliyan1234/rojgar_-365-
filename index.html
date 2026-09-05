@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choose Language</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+  <body>
+
+    <div id="screen1">
+      <h1>Choose your language</h1>
+      <div class="button-row">
+        <button id="english-btn">English</button>
+        <button id="hindi-btn">हिंदी</button>
+      </div>
+    </div>
+  
+    <div id="screen2" style="display: none;">
+      <h1>Choose your role</h1>
+      <div class="button-row">
+        <button id="buyer-btn">Book a Service</button>
+        <button id="worker-btn">Offer a Service</button>
+      </div>
+    </div>
+
+    <div id="screen3" style="display: none;">
+      <h1>Enter your phone number</h1>
+      <div class="button-row">
+        <input type="text" id="phone-input" placeholder="10-digit phone number">
+        <button id="send-otp-btn">Send OTP</button>
+      </div>
+  
+      <div id="otp-section" style="display: none; margin-top: 20px;">
+        <input type="text" id="otp-input" placeholder="Enter OTP">
+        <button id="verify-otp-btn">Verify</button>
+      </div>
+    </div>
+    <div id="screen4" style="display: none;">
+      <h1>Complete your profile</h1>
+      <div class="button-row">
+        <input type="text" id="name-input" placeholder="Full Name">
+      </div>
+      <div class="button-row">
+        <input type="text" id="area-input" placeholder="Your Area/Locality">
+      </div>
+  
+      <div id="worker-fields" style="display: none;">
+        <div class="button-row">
+          <input type="text" id="trade-input" placeholder="Trade (e.g. Electrician, Plumber)">
+        </div>
+      </div>
+  
+      <div class="button-row">
+        <button id="finish-btn">Finish</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+    </html>
