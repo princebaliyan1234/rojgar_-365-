@@ -1,10 +1,11 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routers import auth
 from app.routers import booking
+from app.routers import checkin
 from app.routers import search
 
 app = FastAPI()
-from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,7 +16,9 @@ app.add_middleware(
 
 app.include_router(booking.router)
 app.include_router(auth.router)
+app.include_router(checkin.router)
 app.include_router(search.search_route)
+
 
 @app.get("/health")
 def health():
