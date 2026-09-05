@@ -54,9 +54,9 @@ Notes: kyc_status always starts "pending". 404 if user_id or union_id doesn't ex
 
 ### Search workers
 Method + Path: GET /search
-Request: none (query params: trade string, locality string, lat float optional, lon float optional, proximity bool optional)
-Response: [ { "id": int, "name": string, "trade": string, "locality": string, "price": float, "rating_avg": float, "photo_urls": [string], "distance_km": float (only if proximity=true) } ]
-Notes: photo_urls = top 3 worker_photos ordered by position. 200 with [] if no matches. 400 if proximity=true without lat/lon.
+Request: none (query params: trade string, locality string, lat float optional, lon float optional, proximity float optional — km radius, NOT a boolean as originally written)
+Response: [ { "id": int, "name": string, "trade": string, "locality": string, "price": float, "rating_avg": float, "review_count": int, "photo_urls": [string], "latitude": float, "longitude": float, "distance_km": float | null } ]
+Notes: trade/locality matching is case-insensitive substring (ilike), not exact match. rating_avg always returned even when 0.0 (no reviews yet); review_count added alongside it. When lat/lon are given, results are sorted nearest-first by real geopy distance. When proximity is also given: if any worker falls within that radius, only those are returned; if none do, returns exactly ONE result — the single nearest worker overall, with their real distance_km attached — instead of an empty list, so the frontend can show "nothing nearby, here's the closest match" rather than a dead end. photo_urls = worker's worker_photos ordered by position. 200 with [] only when no trade/locality match exists at all (not for the proximity-fallback case, which always returns 1). 400 if proximity is given without lat/lon.
 
 ### Get worker profile
 Method + Path: GET /workers/{worker_id}
