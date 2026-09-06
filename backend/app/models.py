@@ -45,6 +45,7 @@ class WorkerProfile(Base):
     preferred_end = Column(String)
     is_online = Column(Boolean, default=False)
     rating_avg = Column(Float, default=0.0)
+    description = Column(String)
 
     user = relationship("User", back_populates="worker_profile")
     union = relationship("Union")
