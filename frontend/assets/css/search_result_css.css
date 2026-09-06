@@ -1,0 +1,30 @@
+div {
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+button {
+  background: #4c3fb0;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+#searchBtn {
+  background-color: #7b65a4;
+}
+
+.book-now-btn {
+  background-color: #ffd700;
+  color: black;
+}#resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+#resultsContainer > div {
+  width: 220px;
+}
