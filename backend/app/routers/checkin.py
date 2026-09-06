@@ -5,6 +5,8 @@ from geopy.distance import geodesic
 from app.database import SessionLocal
 from app.models import Booking, DayRecord, User, OtpCode, Payment, WorkerProfile
 from app.services.wage_calc import calculate_wage
+from app.models import LedgerEntry
+from app.services.hash_chain import compute_hash
 
 router = APIRouter()
 
@@ -124,10 +126,12 @@ def checkout_request_otp(day_record_id: int):
 def checkout_confirm(day_record_id: int, code: str, worker_lat: float, worker_lon: float):
     db = SessionLocal()
     day_record = db.query(DayRecord).filter(DayRecord.id == day_record_id).first()
+    
     if not day_record:
         db.close()
         raise HTTPException(status_code=404, detail="Day record not found")
-
+    
+    
     otp_entry = db.query(OtpCode).filter(
         OtpCode.phone_or_booking_id == str(day_record_id),
         OtpCode.code == code,
@@ -158,6 +162,30 @@ def checkout_confirm(day_record_id: int, code: str, worker_lat: float, worker_lo
 
     day_record.wage_amount = calculate_wage(booking, profile)
 
+
+    last_entry = (
+        db.query(LedgerEntry)
+        .filter(LedgerEntry.worker_id == booking.worker_id)
+        .order_by(LedgerEntry.id.desc())
+        .first()
+    )
+    previous_hash = last_entry.hash if last_entry else "0"
+
+    record_data = {
+        "day_record_id": day_record.id,
+        "day_number": day_record.day_number,
+        "wage_amount": day_record.wage_amount,
+    }
+    new_hash = compute_hash(record_data, previous_hash)
+
+    ledger_entry = LedgerEntry(
+        worker_id=booking.worker_id,
+        day_record_id=day_record.id,
+        hash=new_hash,
+        previous_hash=previous_hash,
+    )
+    db.add(ledger_entry)
+
     payment = db.query(Payment).filter(Payment.day_record_id == day_record_id).first()
     if payment:
         payment.status = "released"
@@ -171,6 +199,7 @@ def checkout_confirm(day_record_id: int, code: str, worker_lat: float, worker_lo
         "day_record_id": day_record_id,
         "end_time": day_record.end_time,
         "wage_amount": day_record.wage_amount,
+
         "payment_status": payment.status if payment else None,
         "status": day_record.status,
     }
