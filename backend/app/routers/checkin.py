@@ -53,7 +53,7 @@ def checkin_request_otp(day_record_id: int):
     db.commit()
     db.close()
 
-    return {"status": "sent", "expires_in_seconds": OTP_EXPIRY_MINUTES * 60}
+    return {"status": "sent", "expires_in_seconds": OTP_EXPIRY_MINUTES * 60, "otp": otp}
 
 
 @router.post("/day-records/{day_record_id}/checkin/confirm")
@@ -119,7 +119,7 @@ def checkout_request_otp(day_record_id: int):
     db.commit()
     db.close()
 
-    return {"status": "sent", "expires_in_seconds": OTP_EXPIRY_MINUTES * 60}
+    return {"status": "sent", "expires_in_seconds": OTP_EXPIRY_MINUTES * 60, "otp": otp}
 
 
 @router.post("/day-records/{day_record_id}/checkout/confirm")
