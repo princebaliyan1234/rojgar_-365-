@@ -53,11 +53,16 @@ def search(
             price=profile.price,
             rating_avg=profile.rating_avg,
             review_count=get_review_count(user.id),
+            kyc_status=profile.kyc_status,
             photo_urls=get_photo_urls(user.id),
             latitude=user.latitude,
             longitude=user.longitude,
             distance_km=distance_km
         )
+
+    if proximity is not None and (lat is None or lon is None):
+        raise HTTPException(status_code=400, detail="proximity requires lat and lon")
+
 
     # No coordinates given — return plain locality/trade matches, no distance sorting
     if lat is None or lon is None:
