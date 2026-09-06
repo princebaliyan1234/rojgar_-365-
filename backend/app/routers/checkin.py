@@ -7,12 +7,23 @@ from app.models import Booking, DayRecord, User, OtpCode, Payment, WorkerProfile
 from app.services.wage_calc import calculate_wage
 from app.models import LedgerEntry
 from app.services.hash_chain import compute_hash
+from app.schemas.day_record_schema import DayRecordDetail
 
 router = APIRouter()
 
 DISTANCE_LIMIT_METERS = 500
 OTP_EXPIRY_MINUTES = 5
 
+@router.get("/day-records/{day_record_id}", response_model=DayRecordDetail)
+def get_day_record(day_record_id: int):
+    db = SessionLocal()
+    day_record = db.query(DayRecord).filter(DayRecord.id == day_record_id).first()
+    db.close()
+
+    if not day_record:
+        raise HTTPException(status_code=404, detail="Day record not found")
+
+    return day_record
 
 def _get_customer_location(db, day_record):
     booking = db.query(Booking).filter(Booking.id == day_record.booking_id).first()
@@ -63,6 +74,10 @@ def checkin_confirm(day_record_id: int, code: str, worker_lat: float, worker_lon
     if not day_record:
         db.close()
         raise HTTPException(status_code=404, detail="Day record not found")
+
+    if day_record.status in ("in_progress", "completed"):
+        db.close()
+        raise HTTPException(status_code=400, detail="This day has already been checked in")
 
     otp_entry = db.query(OtpCode).filter(
         OtpCode.phone_or_booking_id == str(day_record_id),
@@ -130,6 +145,11 @@ def checkout_confirm(day_record_id: int, code: str, worker_lat: float, worker_lo
     if not day_record:
         db.close()
         raise HTTPException(status_code=404, detail="Day record not found")
+
+    if day_record.status == "completed":
+        db.close()
+        raise HTTPException(status_code=400, detail="This day has already been checked out")
+    
     
     
     otp_entry = db.query(OtpCode).filter(
