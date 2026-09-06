@@ -155,8 +155,8 @@ Notes: only valid once every day_record is "completed" — 400 otherwise. Unlock
 ### Earnings ledger
 Method + Path: GET /workers/{worker_id}/ledger
 Request: none (path param only)
-Response: { "total_jobs": int, "total_earnings": float, "entries": [ { "day_record_id": int, "day_number": int, "wage_amount": float, "remarks": string | null, "hash": string, "verified": bool } ] }
-Notes: joins day_records + payments + ledger_entries. Visible only to the worker themself + cooperative admin — role-check enforced here.
+Response: { "total_jobs": int, "total_earnings": float, "entries": [ { "day_record_id": int, "day_number": int, "wage_amount": float | null, "remarks": string | null, "hash": string, "verified": bool } ] }
+Notes: total_jobs counts completed day_records for this worker (joined through bookings), NOT completed bookings — booking-level completion status isn't tracked anywhere yet. total_earnings sums wage_amount across all this worker's ledger entries. A ledger_entries row is created automatically at the moment a day_record's checkout is confirmed (in checkin.py's checkout_confirm), chaining off the worker's most recent previous entry's hash (or "0" for their first entry ever) — this is Priyanshu's hash_chain module (compute_hash/verify_hash), not something the ledger endpoint computes itself. verified is recalculated fresh on every read by re-hashing the entry's current stored day_record data and comparing to the stored hash — so it correctly flips to false if wage_amount (or any hashed field) is later changed directly in the database, but does NOT protect against an attacker who has direct DB access and could recompute a matching hash themselves (no external anchoring — an honest, disclosed limitation, not a gap to hide). 404 if worker_id doesn't exist.
 
 ## Module 5: Review
 
