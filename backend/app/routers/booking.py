@@ -9,6 +9,7 @@ from fastapi import Query
 from app.schemas.booking_list_schema import BookingListItem
 from app.models import DayRecord
 from app.schemas.worker_mode_schema import RespondRequest, RespondOut, CompleteOut
+from app.schemas.day_record_schema import DayRecordDetail
 
 router = APIRouter()
 
@@ -43,21 +44,121 @@ def respond_to_booking(booking_id: int, payload: RespondRequest):
 @router.patch("/bookings/{booking_id}/complete", response_model=CompleteOut)
 def complete_booking(booking_id: int):
     db = SessionLocal()
+
     booking = db.query(Booking).filter(Booking.id == booking_id).first()
+
     if not booking:
         db.close()
-        raise HTTPException(status_code=404, detail="Booking not found")
+        raise HTTPException(
+            status_code=404,
+            detail="Booking not found"
+        )
 
-    day_records = db.query(DayRecord).filter(DayRecord.booking_id == booking_id).all()
-    if not day_records or any(dr.status != "completed" for dr in day_records):
+    day_records = (
+        db.query(DayRecord)
+        .filter(DayRecord.booking_id == booking_id)
+        .all()
+    )
+
+    if not day_records or any(
+        dr.status != "completed"
+        for dr in day_records
+    ):
         db.close()
-        raise HTTPException(status_code=400, detail="All day records must be completed first")
+        raise HTTPException(
+            status_code=400,
+            detail="All day records must be completed first"
+        )
+
+    # Worker has finished the work.
+    # Customer still needs to confirm it.
+    booking.status = "awaiting_confirmation"
+
+    db.commit()
+
+    result = CompleteOut(
+        booking_id=booking.id,
+        status=booking.status
+    )
+
+    db.close()
+
+    return result
+
+@router.patch("/bookings/{booking_id}/confirm")
+def confirm_booking_completion(booking_id: int):
+    db = SessionLocal()
+
+    booking = (
+        db.query(Booking)
+        .filter(Booking.id == booking_id)
+        .first()
+    )
+
+    if not booking:
+        db.close()
+        raise HTTPException(
+            status_code=404,
+            detail="Booking not found"
+        )
+
+    if booking.status != "awaiting_confirmation":
+        db.close()
+        raise HTTPException(
+            status_code=400,
+            detail="Booking is not waiting for customer confirmation"
+        )
+
+    day_records = (
+        db.query(DayRecord)
+        .filter(DayRecord.booking_id == booking_id)
+        .all()
+    )
+
+    if not day_records or any(
+        dr.status != "completed"
+        for dr in day_records
+    ):
+        db.close()
+        raise HTTPException(
+            status_code=400,
+            detail="All day records must be completed first"
+        )
 
     booking.status = "completed"
+
     db.commit()
-    result = CompleteOut(booking_id=booking.id, status=booking.status)
+
+    result = {
+        "booking_id": booking.id,
+        "status": booking.status
+    }
+
     db.close()
+
     return result
+
+@router.get("/bookings/{booking_id}/day-records", response_model=list[DayRecordDetail])
+def get_booking_day_records(booking_id: int):
+    db = SessionLocal()
+
+    try:
+        booking = db.query(Booking).filter(Booking.id == booking_id).first()
+
+        if not booking:
+            raise HTTPException(status_code=404, detail="Booking not found")
+
+        day_records = (
+            db.query(DayRecord)
+            .filter(DayRecord.booking_id == booking_id)
+            .order_by(DayRecord.day_number)
+            .all()
+        )
+
+        return day_records
+
+    finally:
+        db.close()
 
 @router.post("/bookings", response_model=BookingResponse)
 def create_booking(payload: BookingCreate):

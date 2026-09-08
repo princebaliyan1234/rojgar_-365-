@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/admin_dashboard.css">
+</head>
+<body>
+
+<header class="admin-header">
+    <div>
+        <h1>Cooperative Admin</h1>
+        <p>Admin Dashboard</p>
+    </div>
+
+    <button id="logout-btn">Logout</button>
+</header>
+
+<main class="dashboard-container">
+
+    <!-- Admin Profile -->
+    <section class="admin-profile-section">
+
+        <div class="section-heading">
+            <h2>Admin Profile</h2>
+            <p>Your cooperative administration details.</p>
+        </div>
+
+        <div class="admin-profile-card">
+
+            <div class="profile-item">
+                <span class="profile-label">Name</span>
+                <span id="admin-name">Loading...</span>
+            </div>
+
+            <div class="profile-item">
+                <span class="profile-label">Phone</span>
+                <span id="admin-phone">Loading...</span>
+            </div>
+
+            <div class="profile-item">
+                <span class="profile-label">Role</span>
+                <span id="admin-role">Loading...</span>
+            </div>
+
+            <div class="profile-item">
+                <span class="profile-label">Union</span>
+                <span id="admin-union">Loading...</span>
+            </div>
+
+            <div class="profile-item">
+                <span class="profile-label">Union Level</span>
+                <span id="admin-union-level">Loading...</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dashboard Overview -->
+    <section class="welcome-section">
+
+        <h2>Dashboard Overview</h2>
+
+        <p>
+            View cooperative activity and financial statistics.
+        </p>
+
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="stats-grid">
+
+        <div class="stat-card">
+            <h3>Total Bookings</h3>
+            <p id="total-bookings">Loading...</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Distributed Earnings</h3>
+            <p id="total-earnings">Loading...</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Welfare Fund</h3>
+            <p id="welfare-fund">Loading...</p>
+        </div>
+
+    </section>
+
+
+    <!-- Administration -->
+    <section class="admin-actions">
+
+        <h2>Administration</h2>
+
+        <div class="action-grid">
+
+            <button class="action-card" id="worker-directory-btn">
+
+                <h3>Worker Directory</h3>
+
+                <p>
+                    View workers and manage KYC approval.
+                </p>
+
+            </button>
+
+
+            <button class="action-card" id="price-band-btn">
+
+                <h3>Price Bands</h3>
+
+                <p>
+                    Manage trade-wise minimum and maximum prices.
+                </p>
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/admin_dashboard.js"></script>
+
+</body>
+</html>

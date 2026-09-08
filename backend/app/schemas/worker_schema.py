@@ -15,3 +15,5 @@ class WorkerDetail(BaseModel):
     photo_urls: list[str]
     kyc_status: str
     description: str | None = None
+    latitude: float | None = None
+    longitude: float | None = None

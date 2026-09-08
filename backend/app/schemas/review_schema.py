@@ -10,3 +10,10 @@ class ReviewOut(BaseModel):
     booking_id: int
     rating: int
     review_text: str
+
+
+class WorkerReviewOut(BaseModel):
+    booking_id: int
+    rating: int
+    review_text: str
+    customer_name: str

@@ -39,7 +39,21 @@
     { "id": 24, "phone": "9911000024", "name": "Yogesh Rathi", "role": "worker", "locality": "Ghaziabad, Kavi Nagar", "latitude": 28.68, "longitude": 77.47, "photo_url": "/img/worker24.jpg" },
     { "id": 25, "phone": "9911000025", "name": "Kamal Sagar", "role": "worker", "locality": "Meerut, Sadar Bazaar", "latitude": 28.98, "longitude": 77.70, "photo_url": "/img/worker25.jpg" },
     { "id": 26, "phone": "9911000026", "name": "Devendra Bhardwaj", "role": "worker", "locality": "Meerut, Sardhana", "latitude": 28.96, "longitude": 77.68, "photo_url": "/img/worker26.jpg" },
-    { "id": 27, "phone": "9911000027", "name": "Ashok Panwar", "role": "worker", "locality": "Ghaziabad, Sahibabad", "latitude": 28.66, "longitude": 77.46, "photo_url": "/img/worker27.jpg" }
+    { "id": 27, "phone": "9911000027", "name": "Ashok Panwar", "role": "worker", "locality": "Ghaziabad, Sahibabad", "latitude": 28.66, "longitude": 77.46, "photo_url": "/img/worker27.jpg" },
+
+    { "id": 28, "phone": "9911000028", "name": "Test User", "role": "buyer", "locality": "Meerut, Test Location", "latitude": 29.040444, "longitude": 77.6685555, "photo_url": "/img/test_user.jpg" },
+    { "id": 29, "phone": "9911000029", "name": "Test Worker", "role": "worker", "locality": "Meerut, Test Location", "latitude": 29.042000, "longitude": 77.6685555, "photo_url": "/img/test_worker.jpg" },
+    {
+  "id": 30,
+  "phone": "9911000030",
+  "name": "Cooperative Admin",
+  "role": "admin",
+  "locality": "Meerut, Sadar Bazaar",
+  "latitude": 29.00,
+  "longitude": 77.72,
+  "photo_url": null
+}
+
   ],
 
   "worker_profiles": [
@@ -66,82 +80,111 @@
     { "id": 21, "user_id": 24, "trade": "steel fixer", "union_id": 9, "skill_cert": true, "price": 830, "kyc_status": "approved" },
     { "id": 22, "user_id": 25, "trade": "pop worker", "union_id": 4, "skill_cert": true, "price": 680, "kyc_status": "approved", "rating_avg": 4.5 },
     { "id": 23, "user_id": 26, "trade": "pop worker", "union_id": 6, "skill_cert": true, "price": 660, "kyc_status": "approved", "rating_avg": 4.0 },
-    { "id": 24, "user_id": 27, "trade": "pop worker", "union_id": 8, "skill_cert": true, "price": 700, "kyc_status": "pending" }
+    { "id": 24, "user_id": 27, "trade": "pop worker", "union_id": 8, "skill_cert": true, "price": 700, "kyc_status": "pending" },
+
+    { "id": 25, "user_id": 29, "trade": "plumber", "union_id": 4, "skill_cert": true, "price": 850, "kyc_status": "approved" }
   ],
 
   "worker_photos": [
     { "id": 1, "worker_id": 4, "url": "/img/workers/4_1.jpg", "position": 1 },
     { "id": 2, "worker_id": 4, "url": "/img/workers/4_2.jpg", "position": 2 },
     { "id": 3, "worker_id": 4, "url": "/img/workers/4_3.jpg", "position": 3 },
+
     { "id": 4, "worker_id": 5, "url": "/img/workers/5_1.jpg", "position": 1 },
     { "id": 5, "worker_id": 5, "url": "/img/workers/5_2.jpg", "position": 2 },
     { "id": 6, "worker_id": 5, "url": "/img/workers/5_3.jpg", "position": 3 },
+
     { "id": 7, "worker_id": 6, "url": "/img/workers/6_1.jpg", "position": 1 },
     { "id": 8, "worker_id": 6, "url": "/img/workers/6_2.jpg", "position": 2 },
     { "id": 9, "worker_id": 6, "url": "/img/workers/6_3.jpg", "position": 3 },
+
     { "id": 10, "worker_id": 7, "url": "/img/workers/7_1.jpg", "position": 1 },
     { "id": 11, "worker_id": 7, "url": "/img/workers/7_2.jpg", "position": 2 },
     { "id": 12, "worker_id": 7, "url": "/img/workers/7_3.jpg", "position": 3 },
+
     { "id": 13, "worker_id": 8, "url": "/img/workers/8_1.jpg", "position": 1 },
     { "id": 14, "worker_id": 8, "url": "/img/workers/8_2.jpg", "position": 2 },
     { "id": 15, "worker_id": 8, "url": "/img/workers/8_3.jpg", "position": 3 },
+
     { "id": 16, "worker_id": 9, "url": "/img/workers/9_1.jpg", "position": 1 },
     { "id": 17, "worker_id": 9, "url": "/img/workers/9_2.jpg", "position": 2 },
     { "id": 18, "worker_id": 9, "url": "/img/workers/9_3.jpg", "position": 3 },
+
     { "id": 19, "worker_id": 10, "url": "/img/workers/10_1.jpg", "position": 1 },
     { "id": 20, "worker_id": 10, "url": "/img/workers/10_2.jpg", "position": 2 },
     { "id": 21, "worker_id": 10, "url": "/img/workers/10_3.jpg", "position": 3 },
+
     { "id": 22, "worker_id": 11, "url": "/img/workers/11_1.jpg", "position": 1 },
     { "id": 23, "worker_id": 11, "url": "/img/workers/11_2.jpg", "position": 2 },
     { "id": 24, "worker_id": 11, "url": "/img/workers/11_3.jpg", "position": 3 },
+
     { "id": 25, "worker_id": 12, "url": "/img/workers/12_1.jpg", "position": 1 },
     { "id": 26, "worker_id": 12, "url": "/img/workers/12_2.jpg", "position": 2 },
     { "id": 27, "worker_id": 12, "url": "/img/workers/12_3.jpg", "position": 3 },
+
     { "id": 28, "worker_id": 13, "url": "/img/workers/13_1.jpg", "position": 1 },
     { "id": 29, "worker_id": 13, "url": "/img/workers/13_2.jpg", "position": 2 },
     { "id": 30, "worker_id": 13, "url": "/img/workers/13_3.jpg", "position": 3 },
+
     { "id": 31, "worker_id": 14, "url": "/img/workers/14_1.jpg", "position": 1 },
     { "id": 32, "worker_id": 14, "url": "/img/workers/14_2.jpg", "position": 2 },
     { "id": 33, "worker_id": 14, "url": "/img/workers/14_3.jpg", "position": 3 },
+
     { "id": 34, "worker_id": 15, "url": "/img/workers/15_1.jpg", "position": 1 },
     { "id": 35, "worker_id": 15, "url": "/img/workers/15_2.jpg", "position": 2 },
     { "id": 36, "worker_id": 15, "url": "/img/workers/15_3.jpg", "position": 3 },
+
     { "id": 37, "worker_id": 16, "url": "/img/workers/16_1.jpg", "position": 1 },
     { "id": 38, "worker_id": 16, "url": "/img/workers/16_2.jpg", "position": 2 },
     { "id": 39, "worker_id": 16, "url": "/img/workers/16_3.jpg", "position": 3 },
+
     { "id": 40, "worker_id": 17, "url": "/img/workers/17_1.jpg", "position": 1 },
     { "id": 41, "worker_id": 17, "url": "/img/workers/17_2.jpg", "position": 2 },
     { "id": 42, "worker_id": 17, "url": "/img/workers/17_3.jpg", "position": 3 },
+
     { "id": 43, "worker_id": 18, "url": "/img/workers/18_1.jpg", "position": 1 },
     { "id": 44, "worker_id": 18, "url": "/img/workers/18_2.jpg", "position": 2 },
     { "id": 45, "worker_id": 18, "url": "/img/workers/18_3.jpg", "position": 3 },
+
     { "id": 46, "worker_id": 19, "url": "/img/workers/19_1.jpg", "position": 1 },
     { "id": 47, "worker_id": 19, "url": "/img/workers/19_2.jpg", "position": 2 },
     { "id": 48, "worker_id": 19, "url": "/img/workers/19_3.jpg", "position": 3 },
+
     { "id": 49, "worker_id": 20, "url": "/img/workers/20_1.jpg", "position": 1 },
     { "id": 50, "worker_id": 20, "url": "/img/workers/20_2.jpg", "position": 2 },
     { "id": 51, "worker_id": 20, "url": "/img/workers/20_3.jpg", "position": 3 },
+
     { "id": 52, "worker_id": 21, "url": "/img/workers/21_1.jpg", "position": 1 },
     { "id": 53, "worker_id": 21, "url": "/img/workers/21_2.jpg", "position": 2 },
     { "id": 54, "worker_id": 21, "url": "/img/workers/21_3.jpg", "position": 3 },
+
     { "id": 55, "worker_id": 22, "url": "/img/workers/22_1.jpg", "position": 1 },
     { "id": 56, "worker_id": 22, "url": "/img/workers/22_2.jpg", "position": 2 },
     { "id": 57, "worker_id": 22, "url": "/img/workers/22_3.jpg", "position": 3 },
+
     { "id": 58, "worker_id": 23, "url": "/img/workers/23_1.jpg", "position": 1 },
     { "id": 59, "worker_id": 23, "url": "/img/workers/23_2.jpg", "position": 2 },
     { "id": 60, "worker_id": 23, "url": "/img/workers/23_3.jpg", "position": 3 },
+
     { "id": 61, "worker_id": 24, "url": "/img/workers/24_1.jpg", "position": 1 },
     { "id": 62, "worker_id": 24, "url": "/img/workers/24_2.jpg", "position": 2 },
     { "id": 63, "worker_id": 24, "url": "/img/workers/24_3.jpg", "position": 3 },
+
     { "id": 64, "worker_id": 25, "url": "/img/workers/25_1.jpg", "position": 1 },
     { "id": 65, "worker_id": 25, "url": "/img/workers/25_2.jpg", "position": 2 },
     { "id": 66, "worker_id": 25, "url": "/img/workers/25_3.jpg", "position": 3 },
+
     { "id": 67, "worker_id": 26, "url": "/img/workers/26_1.jpg", "position": 1 },
     { "id": 68, "worker_id": 26, "url": "/img/workers/26_2.jpg", "position": 2 },
     { "id": 69, "worker_id": 26, "url": "/img/workers/26_3.jpg", "position": 3 },
+
     { "id": 70, "worker_id": 27, "url": "/img/workers/27_1.jpg", "position": 1 },
     { "id": 71, "worker_id": 27, "url": "/img/workers/27_2.jpg", "position": 2 },
-    { "id": 72, "worker_id": 27, "url": "/img/workers/27_3.jpg", "position": 3 }
+    { "id": 72, "worker_id": 27, "url": "/img/workers/27_3.jpg", "position": 3 },
+
+    { "id": 73, "worker_id": 29, "url": "/img/workers/29_1.jpg", "position": 1 },
+    { "id": 74, "worker_id": 29, "url": "/img/workers/29_2.jpg", "position": 2 },
+    { "id": 75, "worker_id": 29, "url": "/img/workers/29_3.jpg", "position": 3 }
   ],
 
   "price_bands": [
@@ -151,50 +194,50 @@
   ],
 
   "bookings": [
-  { "id": 1, "customer_id": 1, "worker_id": 7, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 2, "customer_id": 2, "worker_id": 7, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 3, "customer_id": 3, "worker_id": 10, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 4, "customer_id": 1, "worker_id": 10, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 5, "customer_id": 2, "worker_id": 13, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 6, "customer_id": 3, "worker_id": 13, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 7, "customer_id": 1, "worker_id": 16, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 8, "customer_id": 2, "worker_id": 16, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 9, "customer_id": 3, "worker_id": 19, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 10, "customer_id": 1, "worker_id": 19, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 11, "customer_id": 2, "worker_id": 22, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 12, "customer_id": 3, "worker_id": 22, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 13, "customer_id": 1, "worker_id": 25, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 14, "customer_id": 2, "worker_id": 25, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 15, "customer_id": 3, "worker_id": 8, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 16, "customer_id": 1, "worker_id": 11, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 17, "customer_id": 2, "worker_id": 14, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 18, "customer_id": 3, "worker_id": 17, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 19, "customer_id": 1, "worker_id": 20, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 20, "customer_id": 2, "worker_id": 23, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
-  { "id": 21, "customer_id": 3, "worker_id": 26, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 }
-],
+    { "id": 1, "customer_id": 1, "worker_id": 7, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 2, "customer_id": 2, "worker_id": 7, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 3, "customer_id": 3, "worker_id": 10, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 4, "customer_id": 1, "worker_id": 10, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 5, "customer_id": 2, "worker_id": 13, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 6, "customer_id": 3, "worker_id": 13, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 7, "customer_id": 1, "worker_id": 16, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 8, "customer_id": 2, "worker_id": 16, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 9, "customer_id": 3, "worker_id": 19, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 10, "customer_id": 1, "worker_id": 19, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 11, "customer_id": 2, "worker_id": 22, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 12, "customer_id": 3, "worker_id": 22, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 13, "customer_id": 1, "worker_id": 25, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 14, "customer_id": 2, "worker_id": 25, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 15, "customer_id": 3, "worker_id": 8, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 16, "customer_id": 1, "worker_id": 11, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 17, "customer_id": 2, "worker_id": 14, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 18, "customer_id": 3, "worker_id": 17, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 19, "customer_id": 1, "worker_id": 20, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 20, "customer_id": 2, "worker_id": 23, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 },
+    { "id": 21, "customer_id": 3, "worker_id": 26, "type": "gig", "status": "completed", "payment_model": "daily", "total_days": 1 }
+  ],
 
-"reviews": [
-  { "id": 1, "booking_id": 1, "rating": 5, "review_text": "Great work, very professional." },
-  { "id": 2, "booking_id": 2, "rating": 4, "review_text": "Good job, slightly late but quality work." },
-  { "id": 3, "booking_id": 3, "rating": 5, "review_text": "Sturdy work, highly recommend." },
-  { "id": 4, "booking_id": 4, "rating": 4, "review_text": "Reliable and neat work." },
-  { "id": 5, "booking_id": 5, "rating": 5, "review_text": "Fixed the wiring issue quickly." },
-  { "id": 6, "booking_id": 6, "rating": 3, "review_text": "Work was okay, took longer than expected." },
-  { "id": 7, "booking_id": 7, "rating": 4, "review_text": "Helpful and hardworking." },
-  { "id": 8, "booking_id": 8, "rating": 5, "review_text": "Very cooperative, finished on time." },
-  { "id": 9, "booking_id": 9, "rating": 5, "review_text": "Excellent tile work, clean finish." },
-  { "id": 10, "booking_id": 10, "rating": 4, "review_text": "Good quality, minor delay." },
-  { "id": 11, "booking_id": 11, "rating": 5, "review_text": "Strong and precise steel fixing." },
-  { "id": 12, "booking_id": 12, "rating": 4, "review_text": "Solid work, satisfied." },
-  { "id": 13, "booking_id": 13, "rating": 5, "review_text": "Neat POP finishing, very skilled." },
-  { "id": 14, "booking_id": 14, "rating": 4, "review_text": "Good work overall." },
-  { "id": 15, "booking_id": 15, "rating": 4, "review_text": "Decent mason work." },
-  { "id": 16, "booking_id": 16, "rating": 5, "review_text": "Great bricklaying, very tidy." },
-  { "id": 17, "booking_id": 17, "rating": 4, "review_text": "Professional electrician." },
-  { "id": 18, "booking_id": 18, "rating": 5, "review_text": "Very helpful and punctual." },
-  { "id": 19, "booking_id": 19, "rating": 4, "review_text": "Good tiling work." },
-  { "id": 20, "booking_id": 20, "rating": 5, "review_text": "Excellent steel fixing job." },
-  { "id": 21, "booking_id": 21, "rating": 4, "review_text": "Neat POP work." }
-]
+  "reviews": [
+    { "id": 1, "booking_id": 1, "rating": 5, "review_text": "Great work, very professional." },
+    { "id": 2, "booking_id": 2, "rating": 4, "review_text": "Good job, slightly late but quality work." },
+    { "id": 3, "booking_id": 3, "rating": 5, "review_text": "Sturdy work, highly recommend." },
+    { "id": 4, "booking_id": 4, "rating": 4, "review_text": "Reliable and neat work." },
+    { "id": 5, "booking_id": 5, "rating": 5, "review_text": "Fixed the wiring issue quickly." },
+    { "id": 6, "booking_id": 6, "rating": 3, "review_text": "Work was okay, took longer than expected." },
+    { "id": 7, "booking_id": 7, "rating": 4, "review_text": "Helpful and hardworking." },
+    { "id": 8, "booking_id": 8, "rating": 5, "review_text": "Very cooperative, finished on time." },
+    { "id": 9, "booking_id": 9, "rating": 5, "review_text": "Excellent tile work, clean finish." },
+    { "id": 10, "booking_id": 10, "rating": 4, "review_text": "Good quality, minor delay." },
+    { "id": 11, "booking_id": 11, "rating": 5, "review_text": "Strong and precise steel fixing." },
+    { "id": 12, "booking_id": 12, "rating": 4, "review_text": "Solid work, satisfied." },
+    { "id": 13, "booking_id": 13, "rating": 5, "review_text": "Neat POP finishing, very skilled." },
+    { "id": 14, "booking_id": 14, "rating": 4, "review_text": "Good work overall." },
+    { "id": 15, "booking_id": 15, "rating": 4, "review_text": "Decent mason work." },
+    { "id": 16, "booking_id": 16, "rating": 5, "review_text": "Great bricklaying, very tidy." },
+    { "id": 17, "booking_id": 17, "rating": 4, "review_text": "Professional electrician." },
+    { "id": 18, "booking_id": 18, "rating": 5, "review_text": "Very helpful and punctual." },
+    { "id": 19, "booking_id": 19, "rating": 4, "review_text": "Good tiling work." },
+    { "id": 20, "booking_id": 20, "rating": 5, "review_text": "Excellent steel fixing job." },
+    { "id": 21, "booking_id": 21, "rating": 4, "review_text": "Neat POP work." }
+  ]
 }

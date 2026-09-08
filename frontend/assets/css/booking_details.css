@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+.booking-section {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.booking-section h2 {
+    margin-top: 0;
+}
+
+.booking-section p {
+    margin: 10px 0;
+}
+
+.day-record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    margin-bottom: 10px;
+}
+
+.day-status {
+    font-weight: bold;
+}
+
+#confirmation-section {
+    border: 1px solid #ddd;
+}
+
+#confirm-completion-btn {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #222;
+    color: white;
+
+    cursor: pointer;
+}
+
+#confirm-completion-btn:hover {
+    opacity: 0.85;
+}
+
+#error {
+    background: #fee2e2;
+    color: #991b1b;
+
+    padding: 15px;
+
+    border-radius: 6px;
+}
+
+#review-section {
+    border: 1px solid #ddd;
+}
+
+#review-section label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#rating-input {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#review-text {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+#submit-review-btn {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+}
+
+#submit-review-btn:hover {
+    opacity: 0.85;
+}
+
+#review-message {
+    margin-top: 15px;
+    font-weight: bold;
+}

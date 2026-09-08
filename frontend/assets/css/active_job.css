@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+#loading {
+    text-align: center;
+    padding: 30px;
+}
+
+#error {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#job-page {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.job-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.job-section h2 {
+    margin-top: 0;
+}
+
+.job-section p {
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}

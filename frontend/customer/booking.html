@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/booking.css">
+</head>
+
+<body>
+
+    <div id="loading">
+        Loading worker details...
+    </div>
+
+    <div id="error" style="display: none;"></div>
+
+    <div id="booking" style="display: none;">
+
+        <h1>Request a Booking</h1>
+
+        <!-- Worker information -->
+
+        <div class="worker-info">
+
+            <img id="worker-photo" src="" alt="Worker photo">
+
+            <div class="worker-details">
+
+                <h2 id="worker-name"></h2>
+
+                <p>
+                    <strong>Trade:</strong>
+                    <span id="worker-trade"></span>
+                </p>
+
+                <p>
+                    <strong>Rating:</strong>
+                    <span id="worker-rating"></span>
+                </p>
+
+                <span id="worker-badge"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Booking details -->
+
+        <div class="booking-section">
+
+            <h2>Work Details</h2>
+
+            <div class="input-group">
+
+                <label for="booking-date">
+                    Preferred Date
+                </label>
+
+                <input
+                    type="date"
+                    id="booking-date"
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="time-slot">
+                    Preferred Time Slot
+                </label>
+
+                <select id="time-slot">
+
+                    <option value="">
+                        Select a time slot
+                    </option>
+
+                    <option value="08:00-10:00">
+                        8:00 AM - 10:00 AM
+                    </option>
+
+                    <option value="10:00-12:00">
+                        10:00 AM - 12:00 PM
+                    </option>
+
+                    <option value="12:00-14:00">
+                        12:00 PM - 2:00 PM
+                    </option>
+
+                    <option value="14:00-16:00">
+                        2:00 PM - 4:00 PM
+                    </option>
+
+                    <option value="16:00-18:00">
+                        4:00 PM - 6:00 PM
+                    </option>
+
+                    <option value="18:00-20:00">
+                        6:00 PM - 8:00 PM
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="job-notes">
+                    Describe the Work
+                </label>
+
+                <textarea
+                    id="job-notes"
+                    rows="5"
+                    placeholder="Describe what work you need done..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- Information -->
+
+        <div class="info-section">
+
+            <p>
+                The worker will review your request and propose
+                the expected number of days and daily rate.
+            </p>
+
+            <p>
+                You will see the final amount before making payment.
+            </p>
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button type="button" id="submit-booking-btn">
+                Continue
+            </button>
+
+        </div>
+
+        <p id="booking-message"></p>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/booking_js.js?v=1"></script>
+
+</body>
+</html>

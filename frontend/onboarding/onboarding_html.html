@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rojgar 365 - Get Started</title>
+
+    <link rel="stylesheet" href="onboarding_css.css">
+</head>
+
+<body>
+    <div id="screen1" class="screen">
+        <h1 data-i18n="chooseLanguage">Choose your language</h1>
+
+        <div class="button-row">
+            <button type="button" id="english-btn">English</button>
+            <button type="button" id="hindi-btn">हिंदी</button>
+            <button type="button" id="bihari-btn">बिहारी</button>
+        </div>
+    </div>
+
+
+    <div id="screen2" class="screen" style="display: none;">
+        <h1 data-i18n="chooseRole">Choose your role</h1>
+
+        <div class="button-row">
+            <button type="button" id="buyer-btn" data-i18n="bookService">
+                Book a Service
+            </button>
+
+            <button type="button" id="worker-btn" data-i18n="offerService">
+                Offer a Service
+            </button>
+
+            <button type="button" id="admin-btn" data-i18n="adminLogin">
+                Sign in as Cooperative Admin
+            </button>
+        </div>
+    </div>
+
+
+    <div id="screen3" class="screen" style="display: none;">
+        <h1 data-i18n="enterPhone">
+            Enter your phone number
+        </h1>
+
+        <div class="input-row">
+            <input type="text" id="phone-input" data-i18n-placeholder="phonePlaceholder"
+                placeholder="10-digit phone number" maxlength="10">
+
+            <button type="button" id="send-otp-btn" data-i18n="sendOtp">
+                Send OTP
+            </button>
+        </div>
+
+        <p id="otp-message"></p>
+
+        <div id="otp-section" style="display: none;">
+
+            <div class="input-row">
+                <input type="text" id="otp-input" data-i18n-placeholder="otpPlaceholder" placeholder="Enter 6-digit OTP"
+                    maxlength="6">
+
+                <button type="button" id="verify-otp-btn" data-i18n="verify">
+                    Verify
+                </button>
+            </div>
+
+            <p id="demo-otp"></p>
+
+        </div>
+    </div>
+
+
+    <div id="screen4" class="screen" style="display: none;">
+
+        <h1 data-i18n="completeProfile">
+            Complete your profile
+        </h1>
+
+        <div class="input-row">
+            <input type="text" id="name-input" data-i18n-placeholder="fullName" placeholder="Full Name">
+        </div>
+
+        <div class="input-row">
+            <input type="text" id="area-input" data-i18n-placeholder="areaLocality" placeholder="Your Area / Locality">
+        </div>
+
+
+        <div id="worker-fields" style="display: none;">
+
+            <div class="input-row">
+                <input type="text" id="trade-input" data-i18n-placeholder="tradePlaceholder"
+                    placeholder="Trade (e.g. Electrician, Plumber)">
+            </div>
+
+
+            <div class="input-row">
+                <select id="state-union-input">
+                    <option value="" data-i18n="selectStateUnion">
+                        Select State Union
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="input-row">
+                <select id="district-union-input" disabled>
+                    <option value="" data-i18n="selectDistrictUnion">
+                        Select District Union
+                    </option>
+                </select>
+            </div>
+
+
+            <div class="input-row">
+                <select id="local-union-input" disabled>
+                    <option value="" data-i18n="selectLocalUnion">
+                        Select Local Union
+                    </option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div class="button-row">
+            <button type="button" id="finish-btn" data-i18n="finish">
+                Finish
+            </button>
+        </div>
+
+        <p id="profile-message"></p>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+
+    <!-- Language system -->
+    <script src="language.js"></script>
+
+    <!-- Main onboarding logic -->
+    <script src="onboarding_js.js"></script>
+</body>
+
+</html>

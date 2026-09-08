@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Job - Rojgar 365</title>
+    <link rel="stylesheet" href="../assets/css/active_job.css">
+</head>
+
+<body>
+
+    <div id="loading">Loading job...</div>
+
+    <div id="error" style="display: none;"></div>
+
+    <div id="job-page" style="display: none;">
+
+        <h1>Active Job</h1>
+
+        <!-- ===============================
+             BOOKING DETAILS
+        ================================ -->
+
+        <div class="job-section">
+
+            <h2>Booking Details</h2>
+
+            <p>
+                <strong>Booking ID:</strong>
+                <span id="booking-id"></span>
+            </p>
+
+            <p>
+                <strong>Customer:</strong>
+                <span id="customer-name"></span>
+            </p>
+
+            <p>
+                <strong>Work:</strong>
+                <span id="job-notes"></span>
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                <span id="booking-days"></span>
+            </p>
+
+            <p>
+                <strong>Booking Status:</strong>
+                <span id="booking-status"></span>
+            </p>
+
+        </div>
+
+
+        <!-- ===============================
+             WORK STATUS
+        ================================ -->
+
+        <div class="job-section">
+
+            <h2>Work Status</h2>
+
+            <p id="work-message">
+                Loading work status...
+            </p>
+
+
+            <!-- CHECK-IN -->
+
+            <div id="checkin-section">
+
+                <button
+                    type="button"
+                    id="check-in-btn"
+                >
+                    Check In
+                </button>
+
+            </div>
+
+
+            <!-- CHECK-IN OTP -->
+
+            <div
+                id="otp-section"
+                style="display: none;"
+            >
+
+                <p id="otp-message"></p>
+
+                <input
+                    type="text"
+                    id="otp-input"
+                    placeholder="Enter 6-digit OTP"
+                    maxlength="6"
+                >
+
+                <button
+                    type="button"
+                    id="confirm-checkin-btn"
+                >
+                    Confirm Check In
+                </button>
+
+            </div>
+
+
+            <!-- CHECK-OUT -->
+
+            <div
+                id="checkout-section"
+                style="display: none;"
+            >
+
+                <button
+                    type="button"
+                    id="check-out-btn"
+                >
+                    Check Out
+                </button>
+
+            </div>
+
+
+            <!-- CHECK-OUT OTP -->
+
+            <div
+                id="checkout-otp-section"
+                style="display: none;"
+            >
+
+                <p id="checkout-otp-message"></p>
+
+                <input
+                    type="text"
+                    id="checkout-otp-input"
+                    placeholder="Enter 6-digit OTP"
+                    maxlength="6"
+                >
+
+                <button
+                    type="button"
+                    id="confirm-checkout-btn"
+                >
+                    Confirm Check Out
+                </button>
+
+            </div>
+
+
+            <p id="action-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/active_job.js"></script>
+
+</body>
+</html>

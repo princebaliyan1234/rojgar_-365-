@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Earnings - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/worker_earnings.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>My Earnings</h1>
+
+        <div id="loading">
+            Loading earnings...
+        </div>
+
+        <div id="error" style="display: none;"></div>
+
+
+        <div id="earnings-page" style="display: none;">
+
+            <!-- SUMMARY -->
+
+            <div class="summary-container">
+
+                <div class="summary-card">
+
+                    <h2>Total Earnings</h2>
+
+                    <p id="total-earnings">
+                        ₹0
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <h2>Completed Days</h2>
+
+                    <p id="total-jobs">
+                        0
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEDGER -->
+
+            <div class="ledger-section">
+
+                <h2>Earnings History</h2>
+
+                <div id="ledger-container"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/worker_earnings.js"></script>
+
+</body>
+
+</html>

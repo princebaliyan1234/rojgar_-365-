@@ -1,40 +1,97 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
   <link rel="stylesheet" href="../assets/css/search_result_css.css">
 </head>
+
 <body>
 
-  <h1>Search Results Page</h1>
+  <h1 data-i18n="searchResults">Search Results Page</h1>
 
   <div>
-    <input type="text" id="serviceInput" placeholder="Search for a service (e.g. plumber)">
-    <input type="text" id="localityInput" placeholder="Enter your locality">
-    <button id="searchBtn">Search</button>
-    <label><input type="checkbox"id="proximityToggle">Search by Proximity</label>
+    <input
+      type="text"
+      id="serviceInput"
+      data-i18n-placeholder="searchServicePlaceholder"
+      placeholder="Search for a service (e.g. plumber)"
+    >
+
+    <input
+      type="text"
+      id="localityInput"
+      data-i18n-placeholder="localityPlaceholder"
+      placeholder="Enter your locality"
+    >
+
+    <button id="searchBtn" data-i18n="search">
+      Search
+    </button>
+
+    <label>
+      <input type="checkbox" id="proximityToggle">
+      <span data-i18n="searchByProximity">
+        Search by Proximity
+      </span>
+    </label>
   </div>
 
   <div id="resultsContainer"></div>
 
-<template id="workerCardTemplate">
-  <div class="worker-card">
-    <img class="worker-photo" src="" alt="worker photo">
-    <div class="name-and-kyc">
-      <h3 class="worker-name"></h3>
-      <span class="worker-verified-badge"></span>
-    </div>
-    <p class="worker-trade"></p>
-    <p class="worker-locality"></p> 
-    <p class="worker-rating">
-      <span class="star-icon">★</span>
-      <span class="rating-value"></span>
-      <span class="rating-count"></span>
-    </p>
-    <p class="worker-price">Price: <span class="price-value"></span></p>
-    <button class="book-now-btn">Book Now</button>
-  </div>
-</template>
+  <template id="workerCardTemplate">
 
-<script src="../assets/js/config.js"></script>
-<script src="../assets/js/search_result_js.js"></script>
+    <div class="worker-card">
+
+      <img
+        class="worker-photo"
+        src=""
+        alt="worker photo"
+      >
+
+      <div class="name-and-kyc">
+        <h3 class="worker-name"></h3>
+        <span class="worker-verified-badge"></span>
+      </div>
+
+      <p class="worker-trade"></p>
+
+      <p class="worker-locality"></p>
+
+      <p class="worker-rating">
+        <span class="star-icon">★</span>
+        <span class="rating-value"></span>
+        <span class="rating-count"></span>
+      </p>
+
+      <p class="worker-price">
+        <span
+          class="price-label"
+          data-i18n="price"
+        >
+          Price
+        </span>:
+
+        <span class="price-value"></span>
+      </p>
+
+      <button
+        class="book-now-btn"
+        data-i18n="bookNow"
+      >
+        Book Now
+      </button>
+
+    </div>
+
+  </template>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../onboarding/language.js"></script>
+  <script src="../assets/js/search_result_js.js"></script>
+
 </body>
+
 </html>
