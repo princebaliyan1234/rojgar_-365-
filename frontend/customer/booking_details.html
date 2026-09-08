@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Details - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/booking_details.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>Booking Details</h1>
+
+        <div id="loading">
+            Loading booking...
+        </div>
+
+        <div id="error" style="display: none;"></div>
+
+        <div id="booking-page" style="display: none;">
+
+            <!-- BOOKING INFORMATION -->
+
+            <div class="booking-section">
+
+                <h2>Booking Information</h2>
+
+                <p>
+                    <strong>Booking ID:</strong>
+                    <span id="booking-id"></span>
+                </p>
+
+                <p>
+                    <strong>Worker:</strong>
+                    <span id="worker-name"></span>
+                </p>
+
+                <p>
+                    <strong>Work:</strong>
+                    <span id="job-notes"></span>
+                </p>
+
+                <p>
+                    <strong>Duration:</strong>
+                    <span id="duration"></span>
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span id="booking-status"></span>
+                </p>
+
+            </div>
+
+
+            <!-- WORK PROGRESS -->
+
+            <div class="booking-section">
+
+                <h2>Work Progress</h2>
+
+                <div id="day-records"></div>
+
+            </div>
+
+
+            <!-- CUSTOMER CONFIRMATION -->
+
+            <div
+                id="confirmation-section"
+                class="booking-section"
+                style="display: none;"
+            >
+
+                <h2>Work Completed?</h2>
+
+                <p>
+                    The worker has completed all the booked days.
+                    Please confirm that the work has been completed.
+                </p>
+
+                <button
+                    type="button"
+                    id="confirm-completion-btn"
+                >
+                    Confirm Work Completed
+                </button>
+
+                <p id="confirmation-message"></p>
+
+            </div>
+
+
+            <!-- REVIEW -->
+
+            <div
+                id="review-section"
+                class="booking-section"
+                style="display: none;"
+            >
+
+                <h2>Rate Your Worker</h2>
+
+                <p>
+                    How was your experience with this worker?
+                </p>
+
+
+                <label for="rating-input">
+                    Rating
+                </label>
+
+                <select id="rating-input">
+
+                    <option value="">
+                        Select rating
+                    </option>
+
+                    <option value="5">
+                        5 - Excellent
+                    </option>
+
+                    <option value="4">
+                        4 - Very Good
+                    </option>
+
+                    <option value="3">
+                        3 - Good
+                    </option>
+
+                    <option value="2">
+                        2 - Poor
+                    </option>
+
+                    <option value="1">
+                        1 - Very Poor
+                    </option>
+
+                </select>
+
+
+                <label for="review-text">
+                    Review
+                </label>
+
+                <textarea
+                    id="review-text"
+                    rows="5"
+                    placeholder="Write your review..."
+                ></textarea>
+
+
+                <button
+                    type="button"
+                    id="submit-review-btn"
+                >
+                    Submit Review
+                </button>
+
+
+                <p id="review-message"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/booking_details.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f5f5f5;
+
+    color: #222;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-header {
+    background: #222;
+
+    color: white;
+
+    padding: 20px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0 0 5px;
+}
+
+.admin-header p {
+    margin: 0;
+
+    color: #ccc;
+}
+
+.admin-header button {
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.price-band-container {
+    max-width: 800px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+}
+
+.page-intro {
+    margin-bottom: 25px;
+}
+
+.page-intro h2 {
+    margin-bottom: 5px;
+}
+
+.page-intro p {
+    color: #666;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.price-band-form,
+.current-band {
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+}
+
+.price-band-form h2,
+.current-band h2 {
+    margin-top: 0;
+}
+
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+
+#save-btn {
+    padding: 11px 18px;
+
+    background: #222;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+#save-btn:hover {
+    opacity: 0.85;
+}
+
+
+#form-message {
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CURRENT BAND
+========================= */
+
+.band-card {
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 18px;
+}
+
+.band-card h3 {
+    margin-top: 0;
+}
+
+.band-card p {
+    margin: 8px 0;
+}
+
+.no-band {
+    padding: 15px;
+
+    background: #f8f8f8;
+
+    border-radius: 6px;
+}
+
+.error-text {
+    color: red;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .admin-header {
+        padding: 15px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .price-band-container {
+        padding: 0 15px;
+    }
+
+    .price-band-form,
+    .current-band {
+        padding: 20px;
+    }
+
+}
+

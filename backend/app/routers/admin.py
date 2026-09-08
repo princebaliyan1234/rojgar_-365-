@@ -115,15 +115,61 @@ def get_price_band(union_id: int = Query(...), trade: str = Query(...), db: Sess
 @admin_route.post("/price-bands", response_model=PriceBandOut)
 def set_price_band(payload: PriceBandCreate, db: Session = Depends(get_db)):
     if payload.floor > payload.ceiling:
-        raise HTTPException(status_code=400, detail="floor cannot exceed ceiling")
+        raise HTTPException(
+            status_code=400,
+            detail="floor cannot exceed ceiling"
+        )
 
-    band = LocalityPriceBand(
-        union_id=payload.union_id,
-        trade=payload.trade,
-        floor=payload.floor,
-        ceiling=payload.ceiling,
+    band = (
+        db.query(LocalityPriceBand)
+        .filter(
+            LocalityPriceBand.union_id == payload.union_id,
+            LocalityPriceBand.trade == payload.trade
+        )
+        .first()
     )
-    db.add(band)
+
+    if band:
+        # Update existing price band
+        band.floor = payload.floor
+        band.ceiling = payload.ceiling
+    else:
+        # Create new price band
+        band = LocalityPriceBand(
+            union_id=payload.union_id,
+            trade=payload.trade,
+            floor=payload.floor,
+            ceiling=payload.ceiling
+        )
+        db.add(band)
+
     db.commit()
     db.refresh(band)
+
     return band
+
+@admin_route.get("/admins/{admin_id}")
+def get_admin_profile(admin_id: int, db: Session = Depends(get_db)):
+    admin = db.query(User).filter(
+        User.id == admin_id,
+        User.role == "admin"
+    ).first()
+
+    if admin is None:
+        raise HTTPException(status_code=404, detail="Admin not found")
+
+    union_id = 4
+
+    union = db.query(Union).filter(Union.id == union_id).first()
+
+    return {
+        "id": admin.id,
+        "name": admin.name,
+        "phone": admin.phone,
+        "role": admin.role,
+        "union": {
+            "id": union.id,
+            "name": union.name,
+            "level": union.level
+        } if union else None
+    }

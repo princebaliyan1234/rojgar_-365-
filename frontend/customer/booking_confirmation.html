@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Confirmed - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/booking_confirmation.css">
+</head>
+
+<body>
+
+    <div id="loading">
+        Loading booking confirmation...
+    </div>
+
+    <div id="error" style="display: none;"></div>
+
+    <div id="confirmation" style="display: none;">
+
+        <h1>✓ Booking Confirmed</h1>
+
+        <div class="success-message">
+            <p>
+                Your booking request has been successfully created.
+            </p>
+
+            <p>
+                Your payment is secured for the booking.
+            </p>
+        </div>
+
+
+        <!-- Booking information -->
+
+        <div class="booking-section">
+
+            <h2>Booking Details</h2>
+
+            <p>
+                <strong>Booking ID:</strong>
+                <span id="booking-id"></span>
+            </p>
+
+            <p>
+                <strong>Worker:</strong>
+                <span id="worker-name"></span>
+            </p>
+
+            <p>
+                <strong>Trade:</strong>
+                <span id="worker-trade"></span>
+            </p>
+
+            <p>
+                <strong>Date:</strong>
+                <span id="booking-date"></span>
+            </p>
+
+            <p>
+                <strong>Time:</strong>
+                <span id="booking-time"></span>
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                <span id="booking-days"></span>
+            </p>
+
+            <p>
+                <strong>Payment Model:</strong>
+                <span id="payment-model"></span>
+            </p>
+
+        </div>
+
+
+        <!-- Payment information -->
+
+        <div class="payment-section">
+
+            <h2>Payment Details</h2>
+
+            <p>
+                <strong>Work Amount:</strong>
+                <span id="work-amount"></span>
+            </p>
+
+            <p>
+                <strong>Platform Commission:</strong>
+                <span id="commission"></span>
+            </p>
+
+            <p>
+                <strong>Remote Fee:</strong>
+                <span id="remote-fee"></span>
+            </p>
+
+            <hr>
+
+            <p class="total">
+
+                <strong>Total Paid:</strong>
+
+                <strong id="final-amount"></strong>
+
+            </p>
+
+            <p>
+                <strong>Payment Status:</strong>
+                <span id="payment-status"></span>
+            </p>
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button type="button" id="done-btn">
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/booking_confirmation.js?v=1"></script>
+
+</body>
+</html>

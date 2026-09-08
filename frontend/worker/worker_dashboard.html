@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Worker Dashboard - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/worker_dashboard.css">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <h1>Worker Dashboard</h1>
+
+        <div id="loading">
+            Loading dashboard...
+        </div>
+
+        <div id="error" style="display: none;"></div>
+
+        <div id="dashboard" style="display: none;">
+
+            <!-- WORKER PROFILE -->
+
+            <div class="dashboard-section">
+
+                <h2>My Profile</h2>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="worker-name"></span>
+                </p>
+
+                <p>
+                    <strong>Trade:</strong>
+                    <span id="worker-trade"></span>
+                </p>
+
+                <p>
+                    <strong>Union:</strong>
+                    <span id="worker-union"></span>
+                </p>
+
+                <p>
+                    <strong>Rating:</strong>
+                    <span id="worker-rating"></span>
+                </p>
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="dashboard-section">
+
+                <h2>Daily Wage</h2>
+
+                <p>
+                    Your current daily wage:
+                    ₹<span id="current-price"></span>
+                </p>
+
+                <label for="price-input">
+                    Set Daily Wage
+                </label>
+
+                <input
+                    type="number"
+                    id="price-input"
+                    min="1"
+                    step="1"
+                    placeholder="Enter daily wage"
+                >
+
+                <button
+                    type="button"
+                    id="save-price-btn"
+                >
+                    Save Wage
+                </button>
+
+                <p id="price-message"></p>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="dashboard-section">
+
+                <h2>Work Location</h2>
+
+                <p>
+                    This location is used for proximity search
+                    and job-site check-in.
+                </p>
+
+                <label for="latitude-input">
+                    Latitude
+                </label>
+
+                <input
+                    type="number"
+                    id="latitude-input"
+                    step="any"
+                    placeholder="Example: 29.040444"
+                >
+
+                <label for="longitude-input">
+                    Longitude
+                </label>
+
+                <input
+                    type="number"
+                    id="longitude-input"
+                    step="any"
+                    placeholder="Example: 77.6685555"
+                >
+
+                <button
+                    type="button"
+                    id="save-location-btn"
+                >
+                    Save Location
+                </button>
+
+                <button
+                    type="button"
+                    id="use-current-location-btn"
+                >
+                    Use My Current Location
+                </button>
+
+                <p id="location-message"></p>
+
+            </div>
+
+
+            <!-- BOOKINGS -->
+
+            <div class="dashboard-section">
+
+                <h2>My Bookings</h2>
+
+                <div id="bookings-container"></div>
+
+            </div>
+            <div class="dashboard-section">
+
+    <h2>My Earnings</h2>
+
+    <p>
+        View your completed work, earnings, and verified ledger.
+    </p>
+
+    <button
+        type="button"
+        onclick="window.location.href='worker_earnings.html'">
+        View My Earnings
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/worker_dashboard.js"></script>
+
+</body>
+
+</html>

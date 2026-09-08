@@ -1,24 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worker Profile page</title>
-    <link rel="stylesheet" href="../assets/css/workerprofile.css">
-</head>
-<body>
-    <div class="profile-card">
-    <img src="Emperor-of-Solo-Play-350x476.jpg" alt="Plumber">
-    <div class="profile_content">
 
-        <p>Name : Ramesh Kumar</p>
-        <span class="skill_badge">
-            Plumber
-        </span>   
-        <p>Rating : 4.5&#9733;</p>
-        <p>Price : 850</p>
-        <button> Book Now </button>
+    <title>Worker Profile</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/workerprofile.css"
+    >
+</head>
+
+<body>
+
+    <div id="loading">
+        Loading...
     </div>
-</div>
+
+    <div
+        id="error"
+        style="display:none;"
+    ></div>
+
+    <div
+        id="profile"
+        style="display:none;"
+    >
+
+        <img
+            id="profile-photo"
+            src=""
+            alt="Worker photo"
+        >
+
+
+        <!-- WORKER NAME AND BADGE -->
+
+        <div class="name-badge">
+
+            <div>
+                <h1>
+                    <strong>Name:</strong>
+                </h1>
+
+                <h1 id="profile-name"></h1>
+            </div>
+
+            <span id="profile-badge"></span>
+
+        </div>
+
+
+        <!-- WORKER DETAILS -->
+
+        <p>
+            <strong>Trade:</strong>
+            <span id="profile-trade"></span>
+        </p>
+
+        <p>
+            <strong>Local-Union:</strong>
+            <span id="profile-union"></span>
+        </p>
+
+        <p>
+            <strong>District-Union:</strong>
+            <span id="profile-district-union"></span>
+        </p>
+
+        <p>
+            <strong>State-Union:</strong>
+            <span id="profile-state-union"></span>
+        </p>
+
+        <p>
+            <strong>Price [per 8 hour]:</strong>
+            <span id="profile-price"></span>
+        </p>
+
+        <p>
+            <strong>Ratings:</strong>
+            <span id="profile-rating"></span>
+        </p>
+
+        <span id="profile-review-count"></span>
+
+        <p>
+            <strong>Description:</strong>
+            <span id="profile-description"></span>
+        </p>
+
+
+        <!-- WORKER LOCATION -->
+
+        <div class="map-section">
+
+            <h2>Worker Location</h2>
+
+            <div id="worker-map"></div>
+
+            <p
+                id="map-message"
+                style="display:none;"
+            ></p>
+
+        </div>
+
+
+        <!-- CUSTOMER REVIEWS -->
+
+        <div id="reviews-section">
+
+            <h2>Customer Reviews</h2>
+
+            <div id="reviews-container">
+                <p>Loading reviews...</p>
+            </div>
+
+        </div>
+
+
+        <!-- WORK PORTFOLIO -->
+
+        <div>
+
+            <strong style="padding-bottom: 10px;">
+                Work-portfolio
+            </strong>
+
+            <div id="profile-photos"></div>
+
+        </div>
+
+
+        <!-- BOOK NOW -->
+
+        <div class="Button">
+
+            <button id="book-now-btn">
+                Book Now
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="../assets/js/config.js"></script>
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    ></script>
+
+    <script
+        src="../assets/js/workerprofile_js.js?v=3"
+    ></script>
+
 </body>
+
 </html>

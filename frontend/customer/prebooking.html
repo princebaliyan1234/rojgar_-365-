@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Booking - Rojgar 365</title>
+    <link rel="stylesheet" href="../assets/css/prebooking.css">
+</head>
+<body>
+
+    <div id="loading">
+        Loading worker details...
+    </div>
+
+    <div id="error" style="display: none;"></div>
+
+    <div id="prebooking" style="display: none;">
+
+        <h1>Contact Worker</h1>
+
+        <div class="worker-info">
+
+            <img id="worker-photo" src="" alt="Worker photo">
+
+            <div class="worker-details">
+                <h2 id="worker-name"></h2>
+
+                <p>
+                    <strong>Trade:</strong>
+                    <span id="worker-trade"></span>
+                </p>
+
+                <p>
+                    <strong>Rating:</strong>
+                    <span id="worker-rating"></span>
+                </p>
+
+                <span id="worker-badge"></span>
+            </div>
+
+        </div>
+
+        <div class="contact-section">
+
+            <h2>Contact Worker</h2>
+
+            <p>
+                You can contact the worker before making your booking.
+            </p>
+
+            <div class="button-row">
+                <button type="button" id="chat-btn">Chat</button>
+                <button type="button" id="call-btn">Call</button>
+                <button type="button" id="video-btn">Video Call</button>
+            </div>
+
+            <p id="contact-message"></p>
+
+        </div>
+
+        <div class="continue-section">
+
+            <p>
+                After discussing the work, continue to make a booking request.
+            </p>
+
+            <button type="button" id="continue-btn">
+                Continue to Booking
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/prebooking_js.js"></script>
+
+</body>
+</html>

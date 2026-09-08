@@ -48,14 +48,15 @@ def get_ledger(worker_id: int, db: Session = Depends(get_db)):
 
         result_entries.append(
             LedgerEntryResult(
+                booking_id=day_record.booking_id,
                 day_record_id=day_record.id,
                 day_number=day_record.day_number,
                 wage_amount=day_record.wage_amount,
                 remarks=day_record.remarks,
                 hash=entry.hash,
                 verified=is_verified,
-            )
-        )
+    )
+)
 
     return LedgerResponse(
         total_jobs=total_jobs,

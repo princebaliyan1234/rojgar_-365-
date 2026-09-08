@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#loading,
+#error {
+    padding: 16px;
+}
+
+#checkout {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.worker-section,
+.booking-section,
+.payment-section,
+.notice {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.worker-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#worker-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+#worker-badge {
+    display: none;
+    align-items: center;
+
+    border: 2px solid black;
+    border-radius: 999px;
+
+    padding: 6px 10px;
+
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.booking-section p {
+    margin: 10px 0;
+}
+
+#job-notes {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin: 12px 0;
+}
+
+.total-row {
+    font-size: 1.2rem;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#payment-message {
+    text-align: center;
+    margin-top: 15px;
+}
