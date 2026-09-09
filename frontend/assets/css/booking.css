@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#loading,
+#error {
+    padding: 16px;
+}
+
+#booking {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.worker-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    border: 2px solid black;
+
+    padding: 15px;
+}
+
+#worker-photo {
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+}
+
+.worker-details {
+    flex: 1;
+}
+
+#worker-name {
+    margin-top: 0;
+}
+
+#worker-badge {
+    display: none;
+
+    align-items: center;
+
+    border: 2px solid black;
+
+    border-radius: 999px;
+
+    padding: 6px 10px;
+
+    font-size: 0.75rem;
+
+    white-space: nowrap;
+}
+
+.booking-section,
+.info-section {
+    border: 2px solid black;
+
+    padding: 15px;
+
+    margin-top: 20px;
+}
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    padding: 10px;
+
+    border: 1px solid black;
+
+    border-radius: 6px;
+
+    font-size: 1rem;
+
+    box-sizing: border-box;
+
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.button-row {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#booking-message {
+    text-align: center;
+
+    margin-top: 15px;
+}

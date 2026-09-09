@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/checkout.css">
+</head>
+
+<body>
+
+    <div id="loading">
+        Loading booking details...
+    </div>
+
+    <div id="error" style="display: none;"></div>
+
+    <div id="checkout" style="display: none;">
+
+        <h1>Review & Payment</h1>
+
+        <!-- Worker information -->
+
+        <div class="worker-section">
+
+            <h2>Worker</h2>
+
+            <div class="worker-info">
+
+                <img id="worker-photo" src="" alt="Worker photo">
+
+                <div>
+                    <h3 id="worker-name"></h3>
+
+                    <p>
+                        <strong>Trade:</strong>
+                        <span id="worker-trade"></span>
+                    </p>
+
+                    <p>
+                        <strong>Rating:</strong>
+                        <span id="worker-rating"></span>
+                    </p>
+
+                    <span id="worker-badge"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Booking details -->
+
+        <div class="booking-section">
+
+            <h2>Booking Details</h2>
+
+            <p>
+                <strong>Date:</strong>
+                <span id="booking-date"></span>
+            </p>
+
+            <p>
+                <strong>Time:</strong>
+                <span id="booking-time"></span>
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                <span id="booking-days"></span>
+            </p>
+
+            <p>
+                <strong>Payment Model:</strong>
+                <span id="payment-model"></span>
+            </p>
+
+            <p>
+                <strong>Work:</strong>
+                <span id="job-notes"></span>
+            </p>
+
+        </div>
+
+
+        <!-- Fee transparency -->
+
+        <div class="payment-section">
+
+            <h2>Payment Breakdown</h2>
+
+            <div class="amount-row">
+                <span>Worker daily rate</span>
+                <span id="daily-rate"></span>
+            </div>
+
+            <div class="amount-row">
+                <span>Number of days</span>
+                <span id="days-amount"></span>
+            </div>
+
+            <div class="amount-row">
+                <span>Work amount</span>
+                <span id="work-amount"></span>
+            </div>
+
+            <div class="amount-row">
+                <span>Platform commission (15%)</span>
+                <span id="commission"></span>
+            </div>
+
+            <div class="amount-row">
+                <span>Remote fee</span>
+                <span id="remote-fee"></span>
+            </div>
+
+            <hr>
+
+            <div class="amount-row total-row">
+                <strong>Total payment</strong>
+                <strong id="final-amount"></strong>
+            </div>
+
+        </div>
+
+
+        <div class="notice">
+
+            <p>
+                Your payment will be held securely until the
+                booking conditions are completed.
+            </p>
+
+            <p>
+                This demo uses milestone payment.
+            </p>
+
+        </div>
+
+
+        <div class="button-row">
+
+            <button type="button" id="pay-btn">
+                Proceed to Mock Payment
+            </button>
+
+        </div>
+
+        <p id="payment-message"></p>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/checkout_js.js?v=1"></script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#loading,
+#error {
+    padding: 16px;
+}
+
+#payment-page {
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.payment-card {
+    border: 2px solid black;
+    padding: 25px;
+}
+
+.amount-row {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 1.3rem;
+
+    margin: 25px 0;
+    padding: 15px;
+
+    border: 1px solid black;
+}
+
+.payment-info {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    padding: 10px 0;
+
+    margin-bottom: 25px;
+}
+
+button {
+    display: block;
+
+    margin: 0 auto;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#payment-message {
+    text-align: center;
+
+    margin-top: 20px;
+}

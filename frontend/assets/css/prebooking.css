@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#loading,
+#error {
+    padding: 16px;
+}
+
+#prebooking {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.worker-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 2px solid black;
+    padding: 15px;
+}
+
+#worker-photo {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.worker-details {
+    flex: 1;
+}
+
+#worker-name {
+    margin-top: 0;
+}
+
+#worker-badge {
+    display: none;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.contact-section,
+.continue-section {
+    border: 2px solid black;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#contact-message {
+    margin-top: 15px;
+}
+
+#continue-btn {
+    margin-top: 10px;
+}

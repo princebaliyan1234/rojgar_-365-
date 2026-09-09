@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - Rojgar 365</title>
+
+    <link rel="stylesheet" href="../assets/css/mock_payment.css">
+</head>
+
+<body>
+
+    <div id="loading">
+        Loading payment details...
+    </div>
+
+    <div id="error" style="display: none;"></div>
+
+    <div id="payment-page" style="display: none;">
+
+        <h1>Payment</h1>
+
+        <div class="payment-card">
+
+            <h2>Rojgar 365 Secure Payment</h2>
+
+            <p>
+                This is a demo payment screen for the hackathon.
+            </p>
+
+            <div class="amount-row">
+
+                <span>Total Amount</span>
+
+                <strong id="total-amount"></strong>
+
+            </div>
+
+            <div class="payment-info">
+
+                <p>
+                    <strong>Payment Model:</strong>
+                    <span id="payment-model"></span>
+                </p>
+
+                <p>
+                    <strong>Duration:</strong>
+                    <span id="duration"></span>
+                </p>
+
+            </div>
+
+            <button type="button" id="pay-btn">
+                Pay Now
+            </button>
+
+            <p id="payment-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/mock_payment.js?v=1"></script>
+
+</body>
+</html>

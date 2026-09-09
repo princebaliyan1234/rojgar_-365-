@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+}
+
+#loading {
+    text-align: center;
+    padding: 30px;
+}
+
+#error {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.worker-section,
+.bookings-section {
+    margin-bottom: 30px;
+}
+
+.booking-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.booking-card h3 {
+    margin-top: 0;
+}
+
+.booking-card p {
+    margin: 8px 0;
+}
+
+.booking-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.booking-buttons button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.booking-buttons button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+.dashboard-section {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section h2 {
+    margin-top: 0;
+}
+
+.dashboard-section label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.dashboard-section input {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.dashboard-section button {
+    margin-top: 8px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #222;
+    color: white;
+}
+
+.dashboard-section button:hover {
+    opacity: 0.85;
+}
+
+#price-message,
+#location-message {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.booking-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+}

@@ -8,6 +8,7 @@ class SearchResult(BaseModel):
     price: float | None = None
     rating_avg: float | None = None
     review_count: int
+    kyc_status: str
     photo_urls: list[str] | None = None
     latitude: float | None = None
     longitude: float | None = None

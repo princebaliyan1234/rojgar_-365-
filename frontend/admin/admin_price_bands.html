@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Price Band Management</title>
+
+    <link rel="stylesheet" href="../assets/css/admin_price_bands.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+
+        <div>
+            <h1>Price Band Management</h1>
+            <p>Manage minimum and maximum prices for trades</p>
+        </div>
+
+        <button id="back-btn">
+            Back to Dashboard
+        </button>
+
+    </header>
+
+
+    <main class="price-band-container">
+
+        <section class="page-intro">
+
+            <h2>Cooperative Price Bands</h2>
+
+            <p>
+                Set the minimum and maximum daily wage allowed
+                for each trade.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SELECT TRADE
+        ========================== -->
+
+        <section class="price-band-form">
+
+            <h2>Set Price Band</h2>
+
+            <div class="input-group">
+
+                <label for="trade-input">
+                    Trade
+                </label>
+
+                <select id="trade-input">
+
+                    <option value="">
+                        Select Trade
+                    </option>
+
+                    <option value="mason">
+                        Mason
+                    </option>
+
+                    <option value="bricklayer">
+                        Bricklayer
+                    </option>
+
+                    <option value="plumber">
+                        Plumber
+                    </option>
+
+                    <option value="electrician">
+                        Electrician
+                    </option>
+
+                    <option value="helper">
+                        Helper
+                    </option>
+
+                    <option value="tile worker">
+                        Tile Worker
+                    </option>
+
+                    <option value="steel fixer">
+                        Steel Fixer
+                    </option>
+
+                    <option value="pop worker">
+                        POP Worker
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- FLOOR -->
+
+            <div class="input-group">
+
+                <label for="floor-input">
+                    Minimum Price (Floor)
+                </label>
+
+                <input
+                    type="number"
+                    id="floor-input"
+                    placeholder="Example: 700"
+                    min="0"
+                    step="1"
+                >
+
+            </div>
+
+
+            <!-- CEILING -->
+
+            <div class="input-group">
+
+                <label for="ceiling-input">
+                    Maximum Price (Ceiling)
+                </label>
+
+                <input
+                    type="number"
+                    id="ceiling-input"
+                    placeholder="Example: 950"
+                    min="0"
+                    step="1"
+                >
+
+            </div>
+
+
+            <button id="save-btn">
+                Save Price Band
+            </button>
+
+            <p id="form-message"></p>
+
+        </section>
+
+
+        <!-- =========================
+             CURRENT PRICE BAND
+        ========================== -->
+
+        <section class="current-band">
+
+            <h2>Current Price Band</h2>
+
+            <div id="current-band-container">
+
+                <p>
+                    Select a trade to view its current price band.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/admin_price_bands.js"></script>
+
+</body>
+
+</html>
+
