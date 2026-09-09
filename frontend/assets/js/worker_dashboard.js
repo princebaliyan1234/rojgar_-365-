@@ -1,4 +1,4 @@
-const workerId = localStorage.getItem("user_id");
+const workerId = sessionStorage.getItem("user_id");
 
 const loading = document.getElementById("loading");
 const errorBox = document.getElementById("error");

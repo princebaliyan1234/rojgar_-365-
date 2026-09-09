@@ -1,53 +1,224 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 30px 20px 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17212b;
+  background-color: #f7f9fb;
+  border-top: 5px solid #ff9933;
+}
+
+/* Loading / Error */
 #loading,
 #error {
-    padding: 16px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 18px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-radius: 8px;
 }
 
+#loading {
+  color: #003366;
+  font-weight: 600;
+}
+
+#error {
+  color: #b3261e;
+  border-left: 4px solid #b3261e;
+  background-color: #fff6f5;
+}
+
+/* Main confirmation container */
 #confirmation {
-    max-width: 700px;
-    margin: 40px auto;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-top: 5px solid #ff9933;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0, 51, 102, 0.08);
 }
 
-h1 {
-    text-align: center;
+/* Main heading */
+#confirmation > h1 {
+  margin: 0 0 25px;
+  color: #003366;
+  text-align: center;
+  font-size: 28px;
 }
 
+/* Success message */
 .success-message {
-    border: 2px solid black;
-    padding: 15px;
-    margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 18px 20px;
+  background-color: #f4faf3;
+  border: 1px solid #c8dfc4;
+  border-left: 4px solid #138808;
+  border-radius: 7px;
 }
 
+.success-message p {
+  margin: 0 0 8px;
+  color: #3f5540;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.success-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* Booking and payment sections */
 .booking-section,
 .payment-section {
-    border: 2px solid black;
-    padding: 15px;
-    margin-top: 20px;
+  margin-top: 20px;
+  padding: 22px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-left: 4px solid #ff9933;
+  border-radius: 7px;
+}
+
+.booking-section h2,
+.payment-section h2 {
+  margin: 0 0 20px;
+  color: #003366;
+  font-size: 21px;
 }
 
 .booking-section p,
 .payment-section p {
-    margin: 10px 0;
+  margin: 10px 0;
+  color: #4d5963;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.total {
-    font-size: 1.2rem;
+.booking-section strong,
+.payment-section strong {
+  color: #003366;
 }
 
+/* Payment details */
+.payment-section {
+  border-left-color: #138808;
+}
+
+.payment-section p {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf0f2;
+}
+
+.payment-section p:last-child {
+  border-bottom: none;
+}
+
+/* Horizontal line */
+.payment-section hr {
+  margin: 18px 0;
+  border: none;
+  border-top: 1px solid #d7dee5;
+}
+
+/* Total */
+.payment-section .total {
+  margin: 0;
+  padding: 15px 0;
+  color: #003366;
+  font-size: 18px;
+  border-bottom: none;
+}
+
+.payment-section .total strong:last-child {
+  color: #138808;
+  font-size: 20px;
+}
+
+/* Payment status */
+#payment-status {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #138808;
+  background-color: #eef8ed;
+  border: 1px solid #a9d5a3;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* Done button */
 .button-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
 }
 
-button {
-    border: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
+#done-btn {
+  min-width: 150px;
+  padding: 13px 28px;
+  color: #ffffff;
+  background-color: #ff9933;
+  border: 2px solid #ff9933;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#done-btn:hover {
+  background-color: #e9821c;
+  border-color: #e9821c;
+}
+
+#done-btn:focus-visible {
+  outline: 3px solid rgba(0, 51, 102, 0.2);
+  outline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px 40px;
+  }
+
+  #confirmation {
+    padding: 20px 15px;
+  }
+
+  #confirmation > h1 {
+    font-size: 24px;
+  }
+
+  .booking-section,
+  .payment-section {
+    padding: 18px 15px;
+  }
+
+  .booking-section p,
+  .payment-section p {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .payment-section .total {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  #done-btn {
+    width: 100%;
+  }
 }

@@ -67,15 +67,25 @@
                 <div id="day-records"></div>
 
             </div>
+            <!-- CUSTOMER LOCATION -->
+            <div id="location-section" class="booking-section" style="display: none;">
+                <h2>Job Location</h2>
 
+                <p>
+                    Share your current location so the worker can be checked in
+                    or checked out within the 500 meter job-site limit.
+                </p>
+
+                <button type="button" id="share-location-btn">
+                    Share Current Location
+                </button>
+
+                <p id="location-message"></p>
+            </div>
 
             <!-- CUSTOMER CONFIRMATION -->
 
-            <div
-                id="confirmation-section"
-                class="booking-section"
-                style="display: none;"
-            >
+            <div id="confirmation-section" class="booking-section" style="display: none;">
 
                 <h2>Work Completed?</h2>
 
@@ -84,10 +94,7 @@
                     Please confirm that the work has been completed.
                 </p>
 
-                <button
-                    type="button"
-                    id="confirm-completion-btn"
-                >
+                <button type="button" id="confirm-completion-btn">
                     Confirm Work Completed
                 </button>
 
@@ -98,11 +105,7 @@
 
             <!-- REVIEW -->
 
-            <div
-                id="review-section"
-                class="booking-section"
-                style="display: none;"
-            >
+            <div id="review-section" class="booking-section" style="display: none;">
 
                 <h2>Rate Your Worker</h2>
 
@@ -148,17 +151,10 @@
                     Review
                 </label>
 
-                <textarea
-                    id="review-text"
-                    rows="5"
-                    placeholder="Write your review..."
-                ></textarea>
+                <textarea id="review-text" rows="5" placeholder="Write your review..."></textarea>
 
 
-                <button
-                    type="button"
-                    id="submit-review-btn"
-                >
+                <button type="button" id="submit-review-btn">
                     Submit Review
                 </button>
 

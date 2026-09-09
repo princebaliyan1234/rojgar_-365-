@@ -1,207 +1,261 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #222;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f9fb;
+  color: #222;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
+/* Header */
 .admin-header {
-    background: #222;
-    color: white;
-
-    padding: 20px 30px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: #003366;
+  color: white;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .admin-header h1 {
-    margin: 0 0 5px;
+  margin: 0 0 4px;
+  font-size: 24px;
 }
 
 .admin-header p {
-    margin: 0;
-    color: #ccc;
+  margin: 0;
+  color: #dbe7f2;
+  font-size: 14px;
 }
 
 .admin-header button {
-    padding: 10px 16px;
-
-    border: none;
-    border-radius: 6px;
-
-    cursor: pointer;
+  padding: 10px 18px;
+  background: white;
+  color: #003366;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+.admin-header button:hover {
+  background: #eef4f8;
+}
 
-/* =========================
-   MAIN
-========================= */
-
+/* Main container */
 .workers-container {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 0 20px;
 }
 
+/* Page intro */
 .page-intro {
-    margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .page-intro h2 {
-    margin-bottom: 5px;
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: #003366;
 }
 
 .page-intro p {
-    color: #666;
+  margin: 0;
+  color: #666;
+  font-size: 15px;
 }
 
+/* Worker section */
+.worker-section {
+  margin-bottom: 35px;
+}
 
-/* =========================
-   WORKER CARD
-========================= */
+.worker-section h2 {
+  margin: 0 0 5px;
+  font-size: 21px;
+  color: #222;
+}
 
+.section-description {
+  margin: 0 0 15px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Worker card */
 .worker-card {
-    background: white;
-
-    border: 1px solid #ddd;
-    border-radius: 10px;
-
-    padding: 20px;
-    margin-bottom: 15px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  background: white;
+  border: 1px solid #e0e5e9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.worker-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.09);
+}
+
+/* Worker information */
 .worker-info h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
+  margin: 0 0 12px;
+  font-size: 19px;
+  color: #003366;
 }
 
 .worker-info p {
-    margin: 7px 0;
+  margin: 7px 0;
+  color: #555;
+  font-size: 14px;
 }
 
+.worker-info strong {
+  color: #333;
+}
 
-/* =========================
-   KYC STATUS
-========================= */
-
+/* KYC status badges */
 .kyc-status {
-    font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
+/* Approved */
 .kyc-status.approved {
-    color: green;
+  background: #e8f7ec;
+  color: #138808;
 }
 
-.kyc-status.rejected {
-    color: red;
-}
-
+/* Pending */
 .kyc-status.pending {
-    color: #b8860b;
+  background: #fff4d6;
+  color: #a66a00;
 }
 
+/* Rejected */
+.kyc-status.rejected {
+  background: #fdeaea;
+  color: #c62828;
+}
 
-/* =========================
-   BUTTONS
-========================= */
-
+/* Action buttons */
 .worker-actions {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .worker-actions button {
-    padding: 9px 14px;
-
-    border: none;
-    border-radius: 6px;
-
-    cursor: pointer;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
+/* Approve */
 .approve-btn {
-    background: #d9f5df;
-    color: #176b2c;
+  background: #e8f7ec;
+  color: #138808;
 }
 
+.approve-btn:hover {
+  background: #d6f0dc;
+}
+
+/* Reject */
 .reject-btn {
-    background: #f8d7da;
-    color: #8b1e2d;
+  background: #fdeaea;
+  color: #c62828;
 }
 
-.worker-actions button:hover {
-    opacity: 0.8;
+.reject-btn:hover {
+  background: #f8d7d7;
 }
 
+/* Empty state */
+.empty-state {
+  background: white;
+  border: 1px dashed #cfd6dc;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  color: #777;
+}
 
-/* =========================
-   EMPTY / ERROR
-========================= */
+.empty-state p {
+  margin: 0;
+}
 
-.empty-state,
+/* Error state */
 .error-state {
-    background: white;
+  background: #fff4f4;
+  border: 1px solid #f0bcbc;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  color: #b3261e;
+}
 
-    padding: 30px;
-
-    text-align: center;
-
-    border-radius: 10px;
-    border: 1px solid #ddd;
+.error-state p {
+  margin-top: 0;
 }
 
 .error-state button {
-    padding: 8px 15px;
-    cursor: pointer;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #003366;
+  color: white;
+  cursor: pointer;
 }
 
+/* Mobile */
+@media (max-width: 700px) {
+  .admin-header {
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 
-/* =========================
-   MOBILE
-========================= */
+  .admin-header button {
+    width: 100%;
+  }
 
-@media (max-width: 600px) {
+  .workers-container {
+    margin-top: 25px;
+    padding: 0 15px;
+  }
 
-    .admin-header {
-        padding: 15px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
+  .page-intro h2 {
+    font-size: 24px;
+  }
 
-    .workers-container {
-        padding: 0 15px;
-    }
+  .worker-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
 
-    .worker-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
+  .worker-actions {
+    width: 100%;
+  }
 
-    .worker-actions {
-        width: 100%;
-    }
-
-    .worker-actions button {
-        flex: 1;
-    }
-
+  .worker-actions button {
+    flex: 1;
+  }
 }

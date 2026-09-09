@@ -12,32 +12,36 @@
 
   <h1 data-i18n="searchResults">Search Results Page</h1>
 
-  <div>
-    <input
-      type="text"
-      id="serviceInput"
-      data-i18n-placeholder="searchServicePlaceholder"
-      placeholder="Search for a service (e.g. plumber)"
-    >
-
-    <input
-      type="text"
-      id="localityInput"
-      data-i18n-placeholder="localityPlaceholder"
-      placeholder="Enter your locality"
-    >
-
-    <button id="searchBtn" data-i18n="search">
-      Search
-    </button>
-
-    <label>
-      <input type="checkbox" id="proximityToggle">
-      <span data-i18n="searchByProximity">
-        Search by Proximity
-      </span>
-    </label>
-  </div>
+  <div class="search-panel">
+  <input
+    type="text"
+    id="serviceInput"
+    data-i18n-placeholder="searchServicePlaceholder"
+    placeholder="Search for a service (e.g. plumber)"
+  >
+  <input
+    type="text"
+    id="localityInput"
+    data-i18n-placeholder="localityPlaceholder"
+    placeholder="Enter your locality"
+  >
+  <button id="searchBtn" data-i18n="search">
+    Search
+  </button>
+  <label>
+    <input type="checkbox" id="proximityToggle">
+    <span data-i18n="searchByProximity">
+      Search by Proximity
+    </span>
+  </label>
+  <button
+    type="button"
+    class="booking-history-btn"
+    onclick="window.location.href='booking_history.html';"
+  >
+    My Bookings
+  </button>
+</div>
 
   <div id="resultsContainer"></div>
 
