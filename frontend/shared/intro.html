@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rojgar 365</title>
+
+<link rel="stylesheet" href="intro_css.css">
+
+
+</head>
+
+<body>
+
+
+<!-- =========================================
+     INTRO SCREEN
+========================================== -->
+
+<section class="intro">
+
+    <!-- Ashoka Chakra -->
+    <div class="chakra-wrap">
+
+        <div class="chakra-spin">
+
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Outer Chakra circle -->
+                <circle
+                    cx="100"
+                    cy="100"
+                    r="90"
+                    fill="none"
+                    stroke="#FFFFFF"
+                    stroke-width="6"
+                />
+
+                <!-- 24 spokes -->
+
+                <line x1="100" y1="100" x2="100" y2="12"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="122.8" y2="15.0"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="144" y2="23.8"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="162.2" y2="37.8"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="176.2" y2="56"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="185.0" y2="77.2"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="188" y2="100"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="185.0" y2="122.8"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="176.2" y2="144"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="162.2" y2="162.2"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="144" y2="176.2"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="122.8" y2="185.0"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="100" y2="188"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="77.2" y2="185.0"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="56" y2="176.2"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="37.8" y2="162.2"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="23.8" y2="144"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="15.0" y2="122.8"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="12" y2="100"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="15.0" y2="77.2"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="23.8" y2="56"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="37.8" y2="37.8"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="56" y2="23.8"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <line x1="100" y1="100" x2="77.2" y2="15.0"
+                    stroke="#FFFFFF" stroke-width="4"/>
+
+                <!-- Center -->
+                <circle
+                    cx="100"
+                    cy="100"
+                    r="9"
+                    fill="#FFFFFF"
+                />
+
+            </svg>
+
+        </div>
+
+    </div>
+
+
+   <!-- Worker hard hat -->
+<div class="worker-hat">
+
+    <img
+        src="helmet_icon_pic.png"
+        alt="Rojgar 365 worker helmet"
+    >
+
+    <!-- Logo text -->
+    <div class="logo-text">
+        <h1>ROJGAR</h1>
+        <h2>365</h2>
+    </div>
+
+</div>
+
+   
+
+</section>
+
+
+
+<script>
+    setTimeout(() => {
+        document.querySelector('.intro').classList.add('fade-out');
+
+        setTimeout(() => {
+            window.location.href = "../onboarding/onboarding_html.html";
+        }, 1000);
+
+    }, 7000);
+</script>
+</body>
+
+</html>

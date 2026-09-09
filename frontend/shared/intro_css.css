@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   INTRO SCREEN
+   ========================================= */
+.intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff9933;
+}
+
+/* =========================================
+   ASHOKA CHAKRA
+   ========================================= */
+.chakra-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  margin: -210px 0 0 -210px;
+  transform: translateX(-135vw) rotate(0deg);
+  animation: rollIn 5.2s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  will-change: transform;
+  z-index: 2;
+}
+
+/* Chakra itself */
+.chakra-spin {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.22));
+  animation: spin 26s linear infinite;
+}
+
+/* SVG fills the Chakra container */
+.chakra-spin svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================
+   CHAKRA ROLL-IN ANIMATION
+   ========================================= */
+@keyframes rollIn {
+  0% {
+    transform: translateX(-135vw) rotate(0deg);
+  }
+  100% {
+    transform: translateX(0) rotate(720deg);
+  }
+}
+
+/* =========================================
+   CHAKRA CONTINUOUS SPIN
+   ========================================= */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================
+   WORKER HARD HAT SVG
+========================================= */
+
+.worker-hat {
+    position: absolute;
+
+    width: 455px;
+    height: 450px;
+
+    left: 50%;
+    top: 48%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.75);
+
+    opacity: 0;
+
+    animation:
+        hatAppear 1.4s ease 4.3s forwards;
+
+    z-index: 5;
+}
+
+
+/* SVG helmet */
+
+.worker-hat img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   ROJGAR 365 TEXT
+========================================= */
+
+.logo-text {
+    position: absolute;
+
+    width: 100%;
+
+    left: 0;
+    top: 200px;
+
+    text-align: center;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    animation:
+        textAppear 1.1s ease 5.1s forwards;
+}
+
+
+.logo-text h1 {
+    color: #075aaa;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.logo-text h2 {
+    color: #125353;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   HARD HAT APPEAR
+========================================= */
+
+@keyframes hatAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.75);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   TEXT APPEAR
+========================================= */
+
+@keyframes textAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+/* =========================================
+   WEBSITE
+   ========================================= */
+.website {
+  min-height: 100vh;
+  padding: 100px 10%;
+  background: white;
+  text-align: center;
+}
+
+.intro {
+    transition: opacity 1s ease;
+}
+
+.intro.fade-out {
+    opacity: 0;
+}

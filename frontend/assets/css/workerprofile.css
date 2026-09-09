@@ -1,162 +1,341 @@
-/* =========================
-   BASIC WORKER PROFILE
-   ========================= */
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  padding: 30px 20px 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17212b;
+  background-color: #f7f9fb;
+  border-top: 5px solid #ff9933;
+}
+
+/* Loading / Error */
 #loading,
 #error {
-    padding: 16px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 18px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-radius: 8px;
 }
 
+#loading {
+  color: #003366;
+  font-size: 18px;
+  font-weight: 600;
+}
 
+#error {
+  color: #b3261e;
+  border-left: 4px solid #b3261e;
+  background-color: #fff6f5;
+}
+
+/* Main profile */
 #profile {
-    padding: 16px;
-    border: 2px solid black;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-top: 5px solid #ff9933;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0, 51, 102, 0.08);
 }
 
-
-#profile > * {
-    border: 1px solid black;
-    padding: 10px;
+/* Main profile photo */
+#profile-photo {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 25px;
+  object-fit: cover;
+  background-color: #eef4f8;
+  border: 4px solid #ffffff;
+  outline: 2px solid #d7dee5;
+  border-radius: 50%;
 }
 
-
-/* =========================
-   WORKER PHOTOS
-   ========================= */
-
-#profile-photos img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-right: 8px;
-}
-
-
-/* =========================
-   NAME AND KYC BADGE
-   ========================= */
-
+/* Name + badge */
 .name-badge {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1e6ea;
 }
 
+.name-badge > div {
+  text-align: center;
+}
+
+.name-badge h1 {
+  display: inline;
+  margin: 0;
+  color: #003366;
+  font-size: 27px;
+  line-height: 1.4;
+}
+
+.name-badge h1 strong {
+  font-weight: 700;
+}
 
 #profile-name {
-    white-space: nowrap;
+  white-space: normal;
 }
-
 
 #profile-badge {
-    display: inline-flex;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 999px;
-
-    padding: 0 10px;
-
-    font-size: 0.75rem;
-    white-space: nowrap;
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  color: #138808;
+  background-color: #eef8ed;
+  border: 1px solid #a9d5a3;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
-
-/* =========================
-   BOOK BUTTON
-   ========================= */
-
-.Button {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+/* Worker details */
+#profile > p {
+  margin: 0;
+  padding: 13px 15px;
+  color: #17212b;
+  border-bottom: 1px solid #edf0f2;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-
-/* =========================
-   REVIEWS
-   ========================= */
-
-#reviews-section {
-    margin-top: 25px;
-    padding-top: 15px;
-    border-top: 1px solid #ddd;
+#profile > p strong {
+  display: inline-block;
+  min-width: 180px;
+  color: #003366;
 }
 
-
-#reviews-section h2 {
-    margin-bottom: 15px;
+#profile > p span {
+  color: #4d5963;
 }
 
-
-.review-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-
-    padding: 15px;
-    margin-bottom: 15px;
-
-    background: #f9f9f9;
+/* Rating */
+#profile-rating {
+  color: #ff9933 !important;
+  font-weight: 700;
 }
 
-
-.review-rating {
-    font-size: 20px;
-    margin-bottom: 8px;
+#profile-review-count {
+  display: block;
+  margin: 10px 15px 5px;
+  color: #687581;
+  font-size: 14px;
 }
 
-
-.review-text {
-    margin: 8px 0;
+/* Description */
+#profile-description {
+  line-height: 1.7;
 }
 
-
-.review-customer {
-    margin: 0;
-    font-weight: bold;
-}
-
-
-/* =========================
-   WORKER MAP
-   ========================= */
-
+/* Map section */
 .map-section {
-    margin-top: 20px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9fbfc;
+  border: 1px solid #d7dee5;
+  border-left: 4px solid #003366;
+  border-radius: 7px;
 }
 
-
-.map-section h2 {
-    margin-bottom: 10px;
+.map-section h2,
+#reviews-section h2 {
+  margin: 0 0 15px;
+  color: #003366;
+  font-size: 22px;
 }
-
 
 #worker-map {
-    width: 100%;
-    height: 350px;
-
-    border: 1px solid #ddd;
-
-    padding: 0;
+  width: 100%;
+  height: 350px;
+  padding: 0;
+  background-color: #eef4f8;
+  border: 1px solid #cfd8df;
+  border-radius: 5px;
+  overflow: hidden;
 }
-
 
 #map-message {
-    margin: 10px 0;
-    color: #666;
+  margin: 12px 0 0;
+  color: #687581;
+  font-size: 14px;
 }
 
+/* Reviews */
+#reviews-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-left: 4px solid #ff9933;
+  border-radius: 7px;
+}
 
-/* =========================
-   MOBILE
-   ========================= */
+#reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-@media (max-width: 600px) {
+.review-card {
+  padding: 16px;
+  background-color: #f7f9fb;
+  border: 1px solid #dfe5e9;
+  border-radius: 6px;
+}
 
-    #worker-map {
-        height: 280px;
-    }
+.review-rating {
+  margin-bottom: 8px;
+  color: #ff9933;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
 
+.review-text {
+  margin: 8px 0;
+  color: #37434d;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.review-customer {
+  margin: 10px 0 0;
+  color: #003366;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Work portfolio */
+#profile-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+#profile > div:not(.name-badge):not(.map-section):not(#reviews-section):not(.Button) {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-left: 4px solid #138808;
+  border-radius: 7px;
+}
+
+#profile-photos img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  background-color: #eef4f8;
+  border: 1px solid #cfd8df;
+  border-radius: 6px;
+}
+
+/* Book now */
+.Button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e1e6ea;
+}
+
+#book-now-btn {
+  min-width: 220px;
+  min-height: 50px;
+  padding: 12px 28px;
+  color: #ffffff;
+  background-color: #138808;
+  border: 2px solid #138808;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+#book-now-btn:hover {
+  background-color: #0f7006;
+  border-color: #0f7006;
+}
+
+#book-now-btn:focus-visible {
+  outline: 3px solid rgba(0, 51, 102, 0.2);
+  outline-offset: 2px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  body {
+    padding: 20px 12px 40px;
+  }
+  #profile {
+    padding: 20px 15px;
+  }
+  #profile-photo {
+    width: 125px;
+    height: 125px;
+  }
+  .name-badge h1 {
+    font-size: 23px;
+  }
+  #profile > p {
+    padding: 12px 8px;
+  }
+  #profile > p strong {
+    display: block;
+    min-width: auto;
+    margin-bottom: 3px;
+  }
+  .map-section,
+  #reviews-section {
+    padding: 15px;
+  }
+  #worker-map {
+    height: 280px;
+  }
+  #profile-photos img {
+    width: 95px;
+    height: 95px;
+  }
+  #book-now-btn {
+    width: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  #profile-photo {
+    width: 110px;
+    height: 110px;
+  }
+  .name-badge h1 {
+    font-size: 21px;
+  }
+  .map-section h2,
+  #reviews-section h2 {
+    font-size: 20px;
+  }
+  #profile-photos img {
+    width: 80px;
+    height: 80px;
+  }
 }

@@ -1,74 +1,232 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+  margin: 0;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fb;
+  color: #003366;
 }
 
 #loading,
 #error {
-    padding: 16px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 16px;
+  text-align: center;
 }
 
+#loading {
+  color: #003366;
+  font-size: 18px;
+}
+
+#error {
+  background-color: #fff4e8;
+  border-left: 5px solid #ff9933;
+  color: #8a3f00;
+  border-radius: 4px;
+}
+
+/* Main pre-booking container */
 #prebooking {
-    max-width: 700px;
-    margin: 0 auto;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
+#prebooking > h1 {
+  margin: 0 0 25px;
+  text-align: center;
+  color: #003366;
+  font-size: 32px;
+  border-bottom: 4px solid #ff9933;
+  padding-bottom: 12px;
+}
+
+/* Worker information */
 .worker-info {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    border: 2px solid black;
-    padding: 15px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #d9e1e8;
+  border-left: 5px solid #ff9933;
+  padding: 22px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 51, 102, 0.08);
 }
 
 #worker-photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 3px solid #138808;
+  background-color: #eef8ed;
 }
 
 .worker-details {
-    flex: 1;
+  flex: 1;
 }
 
 #worker-name {
-    margin-top: 0;
+  margin: 0 0 12px;
+  color: #003366;
+  font-size: 26px;
 }
 
+.worker-details p {
+  margin: 8px 0;
+  color: #333333;
+}
+
+.worker-details strong {
+  color: #003366;
+}
+
+/* Verified badge */
 #worker-badge {
-    display: none;
-    align-items: center;
-    border: 2px solid rgb(0, 0, 0);
-    border-radius: 999px;
-    padding: 6px 10px;
-    font-size: 0.75rem;
-    white-space: nowrap;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  border: 1px solid #138808;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background-color: #eef8ed;
+  color: #138808;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
+/* Contact section */
 .contact-section,
 .continue-section {
-    border: 2px solid black;
-    padding: 15px;
-    margin-top: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d9e1e8;
+  border-top: 4px solid #003366;
+  padding: 22px;
+  margin-top: 22px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 51, 102, 0.06);
 }
 
+.contact-section h2,
+.continue-section h2 {
+  margin-top: 0;
+  color: #003366;
+}
+
+.contact-section p,
+.continue-section p {
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* Contact buttons */
 .button-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
 }
 
 button {
-    border: none;
-    padding: 10px 18px;
-    border-radius: 8px;
-    cursor: pointer;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
+/* Chat */
+#chat-btn {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+#chat-btn:hover {
+  background-color: #00264d;
+}
+
+/* Call */
+#call-btn {
+  background-color: #138808;
+  color: #ffffff;
+}
+
+#call-btn:hover {
+  background-color: #0e6d06;
+}
+
+/* Video */
+#video-btn {
+  background-color: #ff9933;
+  color: #ffffff;
+}
+
+#video-btn:hover {
+  background-color: #e67e22;
+}
+
+/* Contact message */
 #contact-message {
-    margin-top: 15px;
+  margin-top: 18px;
+  padding: 10px 12px;
+  color: #003366;
+  background-color: #eef4f8;
+  border-left: 4px solid #003366;
+  border-radius: 3px;
+}
+
+/* Continue section */
+.continue-section {
+  border-top-color: #ff9933;
 }
 
 #continue-btn {
-    margin-top: 10px;
+  margin-top: 8px;
+  background-color: #ff9933;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+
+#continue-btn:hover {
+  background-color: #e67e22;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 25px 14px;
+  }
+
+  #prebooking > h1 {
+    font-size: 26px;
+  }
+
+  .worker-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #worker-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  #worker-name {
+    font-size: 23px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row button,
+  #continue-btn {
+    width: 100%;
+  }
 }

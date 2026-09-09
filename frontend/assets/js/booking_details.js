@@ -32,6 +32,18 @@ const dayRecordsElement =
     document.getElementById("day-records");
 
 
+// Customer location elements
+
+const locationSection =
+    document.getElementById("location-section");
+
+const shareLocationButton =
+    document.getElementById("share-location-btn");
+
+const locationMessage =
+    document.getElementById("location-message");
+
+
 // Confirmation elements
 
 const confirmationSection =
@@ -171,6 +183,17 @@ async function loadBooking() {
         renderDayRecords();
 
 
+        if (
+            booking.status === "accepted" ||
+            booking.status === "in_progress"
+        ) {
+
+            locationSection.style.display =
+                "block";
+
+        }
+
+
         // Show customer confirmation
 
         if (
@@ -277,6 +300,161 @@ function formatStatus(status) {
         .replace(/\b\w/g, letter =>
             letter.toUpperCase()
         );
+}
+
+
+async function shareCustomerLocation() {
+
+    if (!dayRecords || dayRecords.length === 0) {
+
+        locationMessage.textContent =
+            "No day record found.";
+
+        return;
+    }
+
+
+    const activeDayRecord =
+        dayRecords.find(
+            record =>
+                record.status === "pending" ||
+                record.status === "in_progress"
+        );
+
+
+    if (!activeDayRecord) {
+
+        locationMessage.textContent =
+            "There is no active work day.";
+
+        return;
+    }
+
+
+    if (!navigator.geolocation) {
+
+        locationMessage.textContent =
+            "Location is not supported by this browser.";
+
+        return;
+    }
+
+
+    shareLocationButton.disabled =
+        true;
+
+    shareLocationButton.textContent =
+        "Getting location...";
+
+    locationMessage.textContent =
+        "Please allow location access when your browser asks.";
+
+
+    navigator.geolocation.getCurrentPosition(
+        async position => {
+
+            const customerLat =
+                position.coords.latitude;
+
+            const customerLon =
+                position.coords.longitude;
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${API_BASE_URL}/day-records/${activeDayRecord.id}/location?customer_lat=${encodeURIComponent(customerLat)}&customer_lon=${encodeURIComponent(customerLon)}`,
+                        {
+                            method: "POST"
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.detail ||
+                        "Could not update location."
+                    );
+                }
+
+
+                locationMessage.textContent =
+                    "Location shared successfully. The worker can now check in or check out.";
+
+                shareLocationButton.textContent =
+                    "Location Shared";
+
+
+            } catch (error) {
+
+                console.error(
+                    "Location update error:",
+                    error
+                );
+
+                locationMessage.textContent =
+                    error.message ||
+                    "Could not update location.";
+
+                shareLocationButton.disabled =
+                    false;
+
+                shareLocationButton.textContent =
+                    "Share Current Location";
+            }
+
+        },
+
+        error => {
+
+            console.error(
+                "Geolocation error:",
+                error
+            );
+
+
+            if (error.code === 1) {
+
+                locationMessage.textContent =
+                    "Location permission was denied. Please allow location access and try again.";
+
+            } else if (error.code === 2) {
+
+                locationMessage.textContent =
+                    "Your location could not be determined.";
+
+            } else if (error.code === 3) {
+
+                locationMessage.textContent =
+                    "Location request timed out. Please try again.";
+
+            } else {
+
+                locationMessage.textContent =
+                    "Could not get your location.";
+            }
+
+
+            shareLocationButton.disabled =
+                false;
+
+            shareLocationButton.textContent =
+                "Share Current Location";
+        },
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+        }
+    );
+
 }
 
 
@@ -470,6 +648,12 @@ async function submitReview() {
 confirmCompletionButton.addEventListener(
     "click",
     confirmWorkCompleted
+);
+
+
+shareLocationButton.addEventListener(
+    "click",
+    shareCustomerLocation
 );
 
 

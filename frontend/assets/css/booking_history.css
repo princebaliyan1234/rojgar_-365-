@@ -1,90 +1,165 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 30px;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f9fb;
+  color: #222;
 }
 
+/* Page */
 .page {
-    max-width: 900px;
-    margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px 20px;
 }
 
+/* Page title */
 h1 {
-    margin-bottom: 25px;
+  margin: 0 0 30px;
+  font-size: 32px;
+  color: #003366;
 }
 
+/* Loading */
+#loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* Error */
+#error {
+  background: #fff1f1;
+  color: #b42318;
+  border: 1px solid #f0b8b8;
+  border-radius: 8px;
+  padding: 15px 18px;
+  margin-bottom: 20px;
+}
+
+/* Booking card */
 .booking-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #dfe5eb;
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .booking-card h2 {
-    margin-top: 0;
+  margin: 0 0 18px;
+  color: #003366;
+  font-size: 21px;
 }
 
 .booking-card p {
-    margin: 10px 0;
+  margin: 10px 0;
+  line-height: 1.5;
 }
 
+.booking-card strong {
+  color: #444;
+}
+
+/* Status */
 .status {
-    font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 5px;
 }
 
-.status-awaiting_confirmation {
-    color: #d97706;
-}
-
-.status-completed {
-    color: #15803d;
-}
-
-.status-in_progress {
-    color: #2563eb;
-}
-
-.status-accepted {
-    color: #15803d;
-}
-
-.status-rejected {
-    color: #dc2626;
-}
-
+/* Awaiting / Requested */
+.status-awaiting_confirmation,
 .status-requested {
-    color: #d97706;
+  background: #fff4e8;
+  color: #b85c00;
 }
 
+/* Accepted / Completed */
+.status-accepted,
+.status-completed {
+  background: #eef8ed;
+  color: #138808;
+}
+
+/* In progress */
+.status-in_progress {
+  background: #eef4f8;
+  color: #003366;
+}
+
+/* Rejected */
+.status-rejected {
+  background: #fff1f1;
+  color: #c62828;
+}
+
+/* View details button */
 .view-details-btn {
-    margin-top: 10px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: #222;
-    color: white;
+  margin-top: 15px;
+  padding: 11px 18px;
+  background: #003366;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .view-details-btn:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
+/* Empty state */
 .empty-message {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #dfe5eb;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  color: #666;
 }
 
-#error {
-    background: #fee2e2;
-    color: #991b1b;
-    padding: 15px;
-    border-radius: 6px;
+.empty-message p {
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .page {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 27px;
+    margin-bottom: 25px;
+  }
+
+  .booking-card {
+    padding: 18px;
+  }
+
+  .booking-card h2 {
+    font-size: 19px;
+  }
+
+  .status {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .view-details-btn {
+    width: 100%;
+    padding: 12px;
+  }
 }

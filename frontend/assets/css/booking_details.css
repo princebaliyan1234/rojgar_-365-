@@ -1,130 +1,353 @@
+/* =========================
+   GLOBAL
+   ========================= */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 30px;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f9fb;
+  color: #222;
 }
 
 .page {
-    max-width: 900px;
-    margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-h1 {
-    margin-bottom: 25px;
+/* =========================
+   PAGE TITLE
+   ========================= */
+.page > h1 {
+  margin: 0 0 30px;
+  color: #003366;
+  font-size: 32px;
+  font-weight: 700;
 }
 
+/* =========================
+   LOADING
+   ========================= */
+#loading {
+  background: #ffffff;
+  border: 1px solid #e1e6ea;
+  border-radius: 12px;
+  padding: 25px;
+  color: #666;
+  text-align: center;
+}
+
+/* =========================
+   ERROR
+   ========================= */
+#error {
+  background: #fff0f0;
+  color: #b42318;
+  border: 1px solid #f2b8b5;
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   BOOKING SECTION
+   ========================= */
 .booking-section {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+  background: #ffffff;
+  border: 1px solid #e1e6ea;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
 }
 
 .booking-section h2 {
-    margin-top: 0;
+  margin: 0 0 20px;
+  color: #003366;
+  font-size: 21px;
 }
 
-.booking-section p {
-    margin: 10px 0;
+.booking-section > p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.booking-section:hover {
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* =========================
+   BOOKING INFORMATION
+   ========================= */
+.booking-section:first-child {
+  border-top: 4px solid #ff9933;
+}
+
+.booking-section:first-child p {
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid #edf0f2;
+  display: flex;
+  gap: 10px;
+}
+
+.booking-section:first-child p:last-child {
+  border-bottom: none;
+}
+
+.booking-section:first-child strong {
+  min-width: 120px;
+  color: #444;
+}
+
+/* =========================
+   BOOKING STATUS
+   ========================= */
+#booking-status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #eef4f8;
+  color: #003366;
+  font-weight: 700;
+}
+
+/* =========================
+   DAY RECORDS
+   ========================= */
+#day-records {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .day-record {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  background: #f8fafb;
+  border: 1px solid #e1e6ea;
+  border-radius: 9px;
+}
 
-    padding: 15px;
-
-    border: 1px solid #ddd;
-    border-radius: 6px;
-
-    margin-bottom: 10px;
+.day-record strong {
+  color: #333;
 }
 
 .day-status {
-    font-weight: bold;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: #eef8ed;
+  color: #138808;
 }
 
+/* =========================
+   EMPTY DAY RECORDS
+   ========================= */
+#day-records > p {
+  margin: 0;
+  padding: 18px;
+  background: #f8fafb;
+  border: 1px dashed #ccd4da;
+  border-radius: 8px;
+  color: #666;
+  text-align: center;
+}
+
+
+
+/* =========================
+   CONFIRMATION
+   ========================= */
 #confirmation-section {
-    border: 1px solid #ddd;
+  border-left: 4px solid #138808;
+}
+
+#confirmation-section p {
+  color: #555;
 }
 
 #confirm-completion-btn {
-    padding: 10px 16px;
-
-    border: none;
-    border-radius: 5px;
-
-    background: #222;
-    color: white;
-
-    cursor: pointer;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #138808;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 #confirm-completion-btn:hover {
-    opacity: 0.85;
+  background: #0f6f06;
+  transform: translateY(-1px);
 }
 
-#error {
-    background: #fee2e2;
-    color: #991b1b;
-
-    padding: 15px;
-
-    border-radius: 6px;
+#confirm-completion-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
+#confirmation-message {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* =========================
+   REVIEW SECTION
+   ========================= */
 #review-section {
-    border: 1px solid #ddd;
+  border-left: 4px solid #ff9933;
+}
+
+#review-section > p {
+  margin-bottom: 20px;
 }
 
 #review-section label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 7px;
+  color: #333;
+  font-weight: 600;
+}
+
+#rating-input,
+#review-text {
+  width: 100%;
+  border: 1px solid #ccd4da;
+  border-radius: 7px;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
 }
 
 #rating-input {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  max-width: 320px;
+  padding: 11px;
 }
 
 #review-text {
-    display: block;
-    width: 100%;
-    max-width: 600px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: vertical;
+  max-width: 700px;
+  padding: 12px;
+  resize: vertical;
 }
 
+#rating-input:focus,
+#review-text:focus {
+  border-color: #003366;
+  box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.08);
+}
+
+/* =========================
+   REVIEW BUTTON
+   ========================= */
 #submit-review-btn {
-    margin-top: 15px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 5px;
-    background: #222;
-    color: white;
-    cursor: pointer;
+  margin-top: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  background: #003366;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
 #submit-review-btn:hover {
-    opacity: 0.85;
+  background: #00264d;
+  transform: translateY(-1px);
+}
+
+#submit-review-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 #review-message {
-    margin-top: 15px;
-    font-weight: bold;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 700px) {
+  .page {
+    padding: 25px 15px;
+  }
+
+  .page > h1 {
+    font-size: 27px;
+    margin-bottom: 22px;
+  }
+
+  .booking-section {
+    padding: 20px;
+    margin-bottom: 18px;
+  }
+
+  .booking-section:first-child p {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .booking-section:first-child strong {
+    min-width: auto;
+  }
+
+  .day-record {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .day-status {
+    width: fit-content;
+  }
+
+  #rating-input,
+  #review-text {
+    max-width: 100%;
+  }
+
+  #confirm-completion-btn,
+  #submit-review-btn {
+    width: 100%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+   ========================= */
+@media (max-width: 400px) {
+  .page {
+    padding: 20px 12px;
+  }
+
+  .page > h1 {
+    font-size: 24px;
+  }
+
+  .booking-section {
+    padding: 16px;
+  }
+
+  .booking-section h2 {
+    font-size: 19px;
+  }
 }

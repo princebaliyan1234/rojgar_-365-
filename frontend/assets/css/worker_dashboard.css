@@ -1,111 +1,335 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 30px 20px 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17212b;
+  background-color: #f7f9fb;
+  border-top: 5px solid #ff9933;
+}
+
+/* Page */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page > h1 {
+  margin: 0 0 25px;
+  color: #003366;
+  text-align: center;
+  font-size: 28px;
+}
+
+/* Loading / Error */
 #loading {
-    text-align: center;
-    padding: 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 18px 20px;
+  text-align: center;
+  color: #003366;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 #error {
-    padding: 20px;
-    margin-bottom: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 18px 20px;
+  color: #b3261e;
+  background-color: #fff6f5;
+  border: 1px solid #e2aaa5;
+  border-left: 4px solid #b3261e;
+  border-radius: 7px;
 }
 
+/* Dashboard */
 #dashboard {
-    max-width: 900px;
-    margin: 0 auto;
+  width: 100%;
 }
 
-.worker-section,
-.bookings-section {
-    margin-bottom: 30px;
-}
-
-.booking-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 15px;
-}
-
-.booking-card h3 {
-    margin-top: 0;
-}
-
-.booking-card p {
-    margin: 8px 0;
-}
-
-.booking-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.booking-buttons button {
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.booking-buttons button:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-}
+/* Dashboard sections */
 .dashboard-section {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+  margin-bottom: 22px;
+  padding: 22px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-left: 4px solid #ff9933;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 51, 102, 0.06);
 }
 
 .dashboard-section h2 {
-    margin-top: 0;
+  margin: 0 0 18px;
+  color: #003366;
+  font-size: 21px;
 }
 
+.dashboard-section p {
+  color: #4d5963;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.dashboard-section p strong {
+  color: #003366;
+}
+
+/* Profile section */
+.dashboard-section:first-child {
+  border-left-color: #138808;
+}
+
+.dashboard-section:first-child p {
+  margin: 10px 0;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #edf1f4;
+}
+
+.dashboard-section:first-child p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Inputs */
 .dashboard-section label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-weight: bold;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  color: #003366;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .dashboard-section input {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 11px 12px;
+  color: #17212b;
+  background-color: #ffffff;
+  border: 1px solid #bfcbd5;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
 }
 
+.dashboard-section input:focus {
+  outline: none;
+  border-color: #ff9933;
+  box-shadow: 0 0 0 2px rgba(255, 153, 51, 0.15);
+}
+
+.dashboard-section input::placeholder {
+  color: #87939d;
+}
+
+/* Buttons */
 .dashboard-section button {
-    margin-top: 8px;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background: #222;
-    color: white;
+  margin-top: 10px;
+  padding: 11px 18px;
+  color: #ffffff;
+  background-color: #003366;
+  border: 2px solid #003366;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    transform 0.1s ease;
 }
 
 .dashboard-section button:hover {
-    opacity: 0.85;
+  background-color: #00264d;
+  border-color: #00264d;
 }
 
+.dashboard-section button:active {
+  transform: translateY(1px);
+}
+
+.dashboard-section button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Save buttons */
+#save-price-btn,
+#save-location-btn {
+  background-color: #ff9933;
+  border-color: #ff9933;
+}
+
+#save-price-btn:hover,
+#save-location-btn:hover {
+  background-color: #e9821c;
+  border-color: #e9821c;
+}
+
+/* Current location button */
+#use-current-location-btn {
+  margin-left: 8px;
+  background-color: #138808;
+  border-color: #138808;
+}
+
+#use-current-location-btn:hover {
+  background-color: #0f7006;
+  border-color: #0f7006;
+}
+
+/* Messages */
 #price-message,
 #location-message {
-    margin-top: 12px;
-    font-weight: bold;
+  margin-top: 12px;
+  color: #138808;
+  font-size: 14px;
+  font-weight: 700;
 }
 
+/* Bookings */
 .booking-card {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 15px;
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  padding: 18px;
+  background-color: #f9fbfc;
+  border: 1px solid #d7dee5;
+  border-radius: 7px;
+}
+
+.booking-card:last-child {
+  margin-bottom: 0;
+}
+
+.booking-card h3 {
+  margin: 0 0 15px;
+  color: #003366;
+  font-size: 18px;
+}
+
+.booking-card p {
+  margin: 8px 0;
+  color: #4d5963;
+  font-size: 14px;
+}
+
+.booking-card p strong {
+  color: #003366;
+}
+
+/* Booking buttons */
+.booking-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.booking-buttons button {
+  margin-top: 0;
+}
+
+/* Accept */
+.booking-buttons .accept-btn {
+  background-color: #138808;
+  border-color: #138808;
+}
+
+.booking-buttons .accept-btn:hover {
+  background-color: #0f7006;
+  border-color: #0f7006;
+}
+
+/* Reject */
+.booking-buttons .reject-btn {
+  background-color: #ffffff;
+  color: #b3261e;
+  border-color: #b3261e;
+}
+
+.booking-buttons .reject-btn:hover {
+  color: #ffffff;
+  background-color: #b3261e;
+}
+
+/* Open job */
+.open-job-btn {
+  margin-top: 15px !important;
+  background-color: #ff9933 !important;
+  border-color: #ff9933 !important;
+}
+
+.open-job-btn:hover {
+  background-color: #e9821c !important;
+  border-color: #e9821c !important;
+}
+
+/* Earnings section */
+.dashboard-section:last-child {
+  border-left-color: #138808;
+}
+
+.dashboard-section:last-child p {
+  margin-bottom: 15px;
+}
+
+/* Empty booking message */
+#bookings-container > p {
+  margin: 0;
+  padding: 15px;
+  color: #687580;
+  background-color: #f9fbfc;
+  border: 1px dashed #cbd5dc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px 40px;
+  }
+
+  .page > h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-section {
+    padding: 18px 15px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 19px;
+  }
+
+  .dashboard-section input {
+    max-width: 100%;
+  }
+
+  #use-current-location-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .booking-buttons {
+    flex-direction: column;
+  }
+
+  .booking-buttons button {
+    width: 100%;
+  }
+
+  .dashboard-section button {
+    width: 100%;
+  }
+
+  #bookings-container .open-job-btn {
+    width: 100%;
+  }
 }

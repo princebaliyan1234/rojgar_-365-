@@ -39,6 +39,61 @@ def _check_distance(customer_lat, customer_lon, worker_lat, worker_lon):
         raise HTTPException(status_code=400, detail=f"Too far from job site ({int(distance)}m away)")
     return distance
 
+@router.post("/day-records/{day_record_id}/location")
+def update_customer_location(
+    day_record_id: int,
+    customer_lat: float,
+    customer_lon: float
+):
+    db = SessionLocal()
+
+    day_record = db.query(DayRecord).filter(
+        DayRecord.id == day_record_id
+    ).first()
+
+    if not day_record:
+        db.close()
+        raise HTTPException(
+            status_code=404,
+            detail="Day record not found"
+        )
+
+    booking = db.query(Booking).filter(
+        Booking.id == day_record.booking_id
+    ).first()
+
+    if not booking:
+        db.close()
+        raise HTTPException(
+            status_code=404,
+            detail="Booking not found"
+        )
+
+    customer = db.query(User).filter(
+        User.id == booking.customer_id
+    ).first()
+
+    if not customer:
+        db.close()
+        raise HTTPException(
+            status_code=404,
+            detail="Customer not found"
+        )
+
+    customer.latitude = customer_lat
+    customer.longitude = customer_lon
+
+    db.commit()
+
+    result = {
+        "status": "location_updated",
+        "latitude": customer.latitude,
+        "longitude": customer.longitude
+    }
+
+    db.close()
+
+    return result
 
 # ---------- CHECK-IN ----------
 

@@ -245,7 +245,7 @@ document.getElementById("verify-otp-btn").addEventListener(
 
             if (data.user_exists) {
 
-                localStorage.setItem(
+                sessionStorage.setItem(
                     "user_id",
                     data.user_id
                 );
@@ -253,7 +253,7 @@ document.getElementById("verify-otp-btn").addEventListener(
 
                 // Save role returned by backend.
 
-                localStorage.setItem(
+                sessionStorage.setItem(
                     "role",
                     data.role
                 );
@@ -271,21 +271,21 @@ document.getElementById("verify-otp-btn").addEventListener(
                             "This phone number is not registered as a Cooperative Admin."
                         );
 
-                        localStorage.removeItem("user_id");
-                        localStorage.removeItem("role");
-                        localStorage.removeItem("union_id");
+                        sessionStorage.removeItem("user_id");
+                        sessionStorage.removeItem("role");
+                        sessionStorage.removeItem("union_id");
 
                         return;
                     }
 
 
-                    localStorage.setItem(
+                    sessionStorage.setItem(
                         "user_id",
                         data.user_id
                     );
 
 
-                    localStorage.setItem(
+                    sessionStorage.setItem(
                         "role",
                         "admin"
                     );
@@ -295,7 +295,7 @@ document.getElementById("verify-otp-btn").addEventListener(
                     // this admin manages Sadar Bazaar Workers Union.
                     // Union ID 4 = Sadar Bazaar Workers Union.
 
-                    localStorage.setItem(
+                    sessionStorage.setItem(
                         "union_id",
                         "4"
                     );
@@ -701,7 +701,7 @@ document.getElementById("finish-btn").addEventListener(
 
             // Save user ID.
 
-            localStorage.setItem(
+            sessionStorage.setItem(
                 "user_id",
                 userData.id
             );
@@ -713,7 +713,7 @@ document.getElementById("finish-btn").addEventListener(
 
             if (selectedRole === "buyer") {
 
-                localStorage.setItem(
+                sessionStorage.setItem(
                     "role",
                     "buyer"
                 );
@@ -802,13 +802,13 @@ document.getElementById("finish-btn").addEventListener(
             }
 
 
-            localStorage.setItem(
+            sessionStorage.setItem(
                 "worker_id",
                 workerData.id
             );
 
 
-            localStorage.setItem(
+            sessionStorage.setItem(
                 "role",
                 "worker"
             );

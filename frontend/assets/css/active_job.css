@@ -1,39 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px;
+  margin: 0;
+  padding: 30px 20px 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #17212b;
+  background-color: #f7f9fb;
+  border-top: 5px solid #ff9933;
 }
 
+/* Loading */
 #loading {
-    text-align: center;
-    padding: 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 18px 20px;
+  text-align: center;
+  color: #003366;
+  font-weight: 600;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-radius: 8px;
 }
 
+/* Error */
 #error {
-    padding: 20px;
-    margin-bottom: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 18px 20px;
+  color: #b3261e;
+  text-align: center;
+  background-color: #fff6f5;
+  border: 1px solid #f0c8c5;
+  border-left: 4px solid #b3261e;
+  border-radius: 7px;
 }
 
+/* Main page */
 #job-page {
-    max-width: 700px;
-    margin: 0 auto;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-top: 5px solid #ff9933;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0, 51, 102, 0.08);
 }
 
+/* Main heading */
+#job-page > h1 {
+  margin: 0 0 25px;
+  color: #003366;
+  text-align: center;
+  font-size: 28px;
+}
+
+/* Job sections */
 .job-section {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+  padding: 22px;
+  background-color: #ffffff;
+  border: 1px solid #d7dee5;
+  border-left: 4px solid #ff9933;
+  border-radius: 7px;
+}
+
+.job-section:last-child {
+  margin-bottom: 0;
 }
 
 .job-section h2 {
-    margin-top: 0;
+  margin: 0 0 20px;
+  color: #003366;
+  font-size: 21px;
 }
 
 .job-section p {
-    margin: 10px 0;
+  margin: 10px 0;
+  color: #4d5963;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
+.job-section strong {
+  color: #003366;
+}
+
+/* Work message */
+#work-message {
+  padding: 12px 14px;
+  color: #3f5540;
+  background-color: #f4faf3;
+  border: 1px solid #c8dfc4;
+  border-left: 4px solid #138808;
+  border-radius: 6px;
+}
+
+/* Work action areas */
+#checkin-section,
+#checkout-section,
+#otp-section,
+#checkout-otp-section {
+  margin-top: 18px;
+  padding: 18px;
+  background-color: #f9fbfc;
+  border: 1px solid #d7dee5;
+  border-radius: 7px;
+}
+
+/* OTP messages */
+#otp-message,
+#checkout-otp-message {
+  margin-top: 0;
+  color: #003366;
+  font-weight: 600;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin: 8px 0 12px;
+  color: #17212b;
+  background-color: #ffffff;
+  border: 1px solid #bfcbd5;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #ff9933;
+  box-shadow: 0 0 0 2px rgba(255, 153, 51, 0.15);
+}
+
+input::placeholder {
+  color: #87939d;
+}
+
+/* Buttons */
 button {
-    padding: 10px 20px;
-    cursor: pointer;
+  padding: 11px 20px;
+  color: #ffffff;
+  background-color: #ff9933;
+  border: 2px solid #ff9933;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+button:hover {
+  background-color: #e9821c;
+  border-color: #e9821c;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(0, 51, 102, 0.2);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  background-color: #bfc5ca;
+  border-color: #bfc5ca;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Final action message */
+#action-message {
+  margin-top: 18px;
+  padding: 12px 14px;
+  color: #003366;
+  background-color: #eef4f8;
+  border: 1px solid #cbd9e3;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px 40px;
+  }
+
+  #job-page {
+    padding: 20px 15px;
+  }
+
+  #job-page > h1 {
+    font-size: 24px;
+  }
+
+  .job-section {
+    padding: 18px 15px;
+  }
+
+  .job-section h2 {
+    font-size: 19px;
+  }
+
+  #checkin-section,
+  #checkout-section,
+  #otp-section,
+  #checkout-otp-section {
+    padding: 15px;
+  }
+
+  input {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
 }
