@@ -162,7 +162,7 @@ function renderProfile(worker) {
             const img =
                 document.createElement("img");
 
-            img.src = url;
+            img.src = `${API_BASE_URL}${url}`;
             img.alt = worker.name;
 
             photosContainer.appendChild(img);
@@ -174,14 +174,10 @@ function renderProfile(worker) {
     // MAIN PROFILE PHOTO
     // =========================
 
-    if (
-        worker.photo_urls &&
-        worker.photo_urls.length > 0
-    ) {
-        document.getElementById(
-            "profile-photo"
-        ).src =
-            worker.photo_urls[0];
+    // MAIN PROFILE PHOTO
+    if (worker.photo_url) {
+        document.getElementById("profile-photo").src =
+            `${API_BASE_URL}${worker.photo_url}`;
     }
 
 

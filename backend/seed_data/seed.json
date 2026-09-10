@@ -16,9 +16,9 @@
     { "id": 2, "phone": "9911000002", "name": "Suman Tyagi", "role": "buyer", "locality": "Ghaziabad, Kavi Nagar", "latitude": 28.67, "longitude": 77.45, "photo_url": "/img/buyer2.jpg" },
     { "id": 3, "phone": "9911000003", "name": "Anita Sharma", "role": "buyer", "locality": "Meerut, Sadar Bazaar", "latitude": 29.00, "longitude": 77.72, "photo_url": "/img/buyer3.jpg" },
 
-    { "id": 4, "phone": "9911000004", "name": "Rajesh Kumar", "role": "worker", "locality": "Meerut, Sadar Bazaar", "latitude": 28.99, "longitude": 77.71, "photo_url": "/img/worker4.jpg" },
-    { "id": 5, "phone": "9911000005", "name": "Mahesh Verma", "role": "worker", "locality": "Meerut, Kankarkhera", "latitude": 28.97, "longitude": 77.69, "photo_url": "/img/worker5.jpg" },
-    { "id": 6, "phone": "9911000006", "name": "Deepak Rawat", "role": "worker", "locality": "Ghaziabad, Vaishali", "latitude": 28.65, "longitude": 77.44, "photo_url": "/img/worker6.jpg" },
+    { "id": 4, "phone": "9911000004", "name": "Rajesh Kumar", "role": "worker", "locality": "Meerut, Sadar Bazaar", "latitude": 28.99, "longitude": 77.71, "photo_url": "/img/rajesh_kummar.jpeg" },
+    { "id": 5, "phone": "9911000005", "name": "Mahesh Verma", "role": "worker", "locality": "Meerut, Kankarkhera", "latitude": 28.97, "longitude": 77.69, "photo_url": "/img/mahesh-verma.webp" },
+    { "id": 6, "phone": "9911000006", "name": "Deepak Rawat", "role": "worker", "locality": "Ghaziabad, Vaishali", "latitude": 28.65, "longitude": 77.44, "photo_url": "/img/deepak-rawat.webp" },
     { "id": 7, "phone": "9911000007", "name": "Om Prakash", "role": "worker", "locality": "Meerut, Sadar Bazaar", "latitude": 28.98, "longitude": 77.70, "photo_url": "/img/worker7.jpg" },
     { "id": 8, "phone": "9911000008", "name": "Vinod Singh", "role": "worker", "locality": "Meerut, Sardhana", "latitude": 28.96, "longitude": 77.68, "photo_url": "/img/worker8.jpg" },
     { "id": 9, "phone": "9911000009", "name": "Harish Chand", "role": "worker", "locality": "Ghaziabad, Sahibabad", "latitude": 28.66, "longitude": 77.46, "photo_url": "/img/worker9.jpg" },
@@ -42,7 +42,7 @@
     { "id": 27, "phone": "9911000027", "name": "Ashok Panwar", "role": "worker", "locality": "Ghaziabad, Sahibabad", "latitude": 28.66, "longitude": 77.46, "photo_url": "/img/worker27.jpg" },
 
     { "id": 28, "phone": "9911000028", "name": "Test User", "role": "buyer", "locality": "Meerut, Test Location", "latitude": 29.040444, "longitude": 77.6685555, "photo_url": "/img/test_user.jpg" },
-    { "id": 29, "phone": "9911000029", "name": "Test Worker", "role": "worker", "locality": "Meerut, Test Location", "latitude": 29.042000, "longitude": 77.6685555, "photo_url": "/img/test_worker.jpg" },
+    { "id": 29, "phone": "9911000029", "name": "Test Worker", "role": "worker", "locality": "Meerut, Test Location", "latitude": 29.042000, "longitude": 77.6685555, "photo_url": "/img/test_worker.avif" },
     {
   "id": 30,
   "phone": "9911000030",
@@ -86,17 +86,17 @@
   ],
 
   "worker_photos": [
-    { "id": 1, "worker_id": 4, "url": "/img/workers/4_1.jpg", "position": 1 },
-    { "id": 2, "worker_id": 4, "url": "/img/workers/4_2.jpg", "position": 2 },
-    { "id": 3, "worker_id": 4, "url": "/img/workers/4_3.jpg", "position": 3 },
+    { "id": 1, "worker_id": 4, "url": "/img/plumber_rajeshkumar-work.jpg.jpeg", "position": 1 },
+    { "id": 2, "worker_id": 4, "url": "/img/rajesh_kumar_work-2.jpeg", "position": 2 },
+    { "id": 3, "worker_id": 4, "url": "/img/rajesh_kumar_work-3.webp", "position": 3 },
 
-    { "id": 4, "worker_id": 5, "url": "/img/workers/5_1.jpg", "position": 1 },
-    { "id": 5, "worker_id": 5, "url": "/img/workers/5_2.jpg", "position": 2 },
-    { "id": 6, "worker_id": 5, "url": "/img/workers/5_3.jpg", "position": 3 },
+    { "id": 4, "worker_id": 5, "url": "/img/maheshverma-work.jpg.jpeg", "position": 1 },
+    { "id": 5, "worker_id": 5, "url": "/img/maheshvermawork-2.webp", "position": 2 },
+    { "id": 6, "worker_id": 5, "url": "/img/maheshvermawork-3.webp", "position": 3 },
 
-    { "id": 7, "worker_id": 6, "url": "/img/workers/6_1.jpg", "position": 1 },
-    { "id": 8, "worker_id": 6, "url": "/img/workers/6_2.jpg", "position": 2 },
-    { "id": 9, "worker_id": 6, "url": "/img/workers/6_3.jpg", "position": 3 },
+    { "id": 7, "worker_id": 6, "url": "/img/deepakrawat-work1.webp", "position": 1 },
+    { "id": 8, "worker_id": 6, "url": "/img/deepakrawat-work2.webp", "position": 2 },
+    { "id": 9, "worker_id": 6, "url": "/img/deepakrawatwork-3.webp", "position": 3 },
 
     { "id": 10, "worker_id": 7, "url": "/img/workers/7_1.jpg", "position": 1 },
     { "id": 11, "worker_id": 7, "url": "/img/workers/7_2.jpg", "position": 2 },
@@ -182,9 +182,9 @@
     { "id": 71, "worker_id": 27, "url": "/img/workers/27_2.jpg", "position": 2 },
     { "id": 72, "worker_id": 27, "url": "/img/workers/27_3.jpg", "position": 3 },
 
-    { "id": 73, "worker_id": 29, "url": "/img/workers/29_1.jpg", "position": 1 },
-    { "id": 74, "worker_id": 29, "url": "/img/workers/29_2.jpg", "position": 2 },
-    { "id": 75, "worker_id": 29, "url": "/img/workers/29_3.jpg", "position": 3 }
+    { "id": 73, "worker_id": 29, "url": "/img/test_Worker_work-1.webp", "position": 1 },
+    { "id": 74, "worker_id": 29, "url": "/img/test_Worker_work-2.jpeg", "position": 2 },
+    { "id": 75, "worker_id": 29, "url": "/img/test_Worker_work-3.webp", "position": 3 }
   ],
 
   "price_bands": [

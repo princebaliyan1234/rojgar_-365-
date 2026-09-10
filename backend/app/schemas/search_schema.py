@@ -9,6 +9,7 @@ class SearchResult(BaseModel):
     rating_avg: float | None = None
     review_count: int
     kyc_status: str
+    photo_url: str | None = None
     photo_urls: list[str] | None = None
     latitude: float | None = None
     longitude: float | None = None

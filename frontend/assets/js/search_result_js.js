@@ -100,8 +100,9 @@ function renderWorkers(
       card.querySelector(".worker-photo");
 
     img.src =
-      w.photo_urls?.[0] ||
-      "https://placehold.co/80";
+      w.photo_url
+        ? `${API_BASE_URL}${w.photo_url}`
+        : "https://placehold.co/80";
 
     img.onerror = () => {
       img.src =
