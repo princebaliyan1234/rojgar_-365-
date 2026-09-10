@@ -54,6 +54,8 @@ def search(
             rating_avg=profile.rating_avg,
             review_count=get_review_count(user.id),
             kyc_status=profile.kyc_status,
+            photo_url=user.photo_url,
+
             photo_urls=get_photo_urls(user.id),
             latitude=user.latitude,
             longitude=user.longitude,

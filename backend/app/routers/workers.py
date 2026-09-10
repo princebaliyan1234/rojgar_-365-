@@ -185,6 +185,7 @@ def get_worker(
         price=profile.price,
         rating_avg=profile.rating_avg,
         review_count=review_count,
+        photo_url=user.photo_url,     
         photo_urls=[
             p.url for p in photos
         ],

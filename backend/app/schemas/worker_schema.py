@@ -12,6 +12,7 @@ class WorkerDetail(BaseModel):
     price: float | None = None
     rating_avg: float | None = None
     review_count: int
+    photo_url: str | None = None
     photo_urls: list[str]
     kyc_status: str
     description: str | None = None
